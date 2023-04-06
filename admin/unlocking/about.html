@@ -1,0 +1,5083 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+	@charset "UTF-8";
+@font-face {
+    font-family: Roboto;
+    font-display: swap;
+    src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-display: swap;
+    src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-display: swap;
+    src: url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    font-display: swap;
+    src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: rem(15);
+    line-height: 1.6;
+    letter-spacing: -0.03em;
+    color: var(--color-primary);
+    position: relative;
+    overflow-x: hidden;
+    min-width: 320px;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    background: var(--color-papaya);
+}
+main#primary {
+    padding: 140px 0;
+}
+
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1210px;
+}
+.decryption .container {
+    padding: 0 10px;
+}
+:root {
+    --color-primary: #745637;
+    --color-light: #fff;
+    --color-papaya: #ffeed5;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2.9375rem;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    color: var(--color-light);
+}
+
+h1.entry-title {
+    color: var(--color-primary);
+}
+
+table, td, th {
+	border: 1px solid var(--color-primary);
+	padding: 0px 30px;
+}
+
+a.woocommerce-privacy-policy-link, a.woocommerce-terms-and-conditions-link {
+    text-decoration: underline;
+	color: var(--color-primary);
+}
+.woocommerce-privacy-policy-text {
+    margin-bottom: 10px;
+}
+.woocommerce-info{
+	font-weight: bold;
+	padding: 10px;
+    margin-bottom: 10px;
+	background-color: rgb(159, 121, 80);
+}
+.woocommerce-info a{
+	text-decoration: underline;
+	color: var(--color-primary);
+}
+.woocommerce-message {
+    margin-bottom: 10px;
+	background: none;
+	font-weight: bold;
+}
+/* #primary {
+    background: url(../img/login.webp) center center no-repeat;
+    height: 80vh;
+} */
+
+.heading-title {
+    font-weight: 100%;
+    font-size: 3.125rem;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
+.heading-description {
+    font-weight: 400;
+    font-size: 1.6875rem;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+}
+
+.heading-text {
+    font-size: 1.0625rem;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+}
+
+.item-title {
+    font-weight: 700;
+    font-size: 1.6875rem;
+    letter-spacing: -0.03em;
+}
+
+.item-description {
+    font-weight: 400;
+    font-size: 1.0625rem;
+    letter-spacing: -0.03em;
+}
+
+b {
+    font-weight: 700;
+}
+
+.link {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    letter-spacing: -0.03em;
+    color: var(--color-primary);
+    position: relative;
+    padding-left: 33px;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.no-webp .link::before {
+    background-image: url(../img/inst.png);
+}
+
+.link::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+}
+
+.link:hover {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    color: #000;
+}
+
+.no-webp .swipe {
+    background: url(../img/swipe.png) center center no-repeat;
+}
+
+.swipe {
+    width: 100px;
+    height: 60px;
+    -webkit-animation: swipe-run 10s infinite;
+    animation: swipe-run 10s infinite;
+}
+
+.mb32 {
+    margin-bottom: 2rem !important;
+}
+
+.mb80 {
+    margin-bottom: 5rem !important;
+}
+
+.mb0 {
+    margin-bottom: 0 !important;
+}
+
+@-webkit-keyframes show-decr {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes show-decr {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes swipe-run {
+    0% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    25% {
+        -webkit-transform: translateX(150px);
+        transform: translateX(150px);
+    }
+    50% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+
+@keyframes swipe-run {
+    0% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    25% {
+        -webkit-transform: translateX(150px);
+        transform: translateX(150px);
+    }
+    50% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+
+.header {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    /*position: absolute;*/
+    z-index: 9;
+    /*
+  &.fixed {
+      &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 65%;
+          top: 0px;
+          left: 0px;
+          background: rgba(28, 28, 28, 0.23);
+          box-shadow: inset 55.4px -55.4px 55.4px rgb(149 149 149 / 4%),
+              inset -55.4px 55.4px 55.4px rgb(255 255 255 / 4%);
+          backdrop-filter: blur(38.78px);
+          //background: linear-gradient(93.83deg, #fdefd1 -3.42%, #fbe4b8 101.88%);
+      }
+  }
+  */
+}
+
+.header__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.header__logo {
+    margin-top: 0px;
+    margin-left: 0px;
+    position: relative;
+    z-index: 11;
+    margin-right: 62px;
+}
+
+.header__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    margin-top: 2.5rem;
+    position: relative;
+}
+
+.header__nav.show {
+    position: absolute;
+    overflow: scroll;
+    padding: 7.5rem 0;
+    top: -2.5rem;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #ffeed5;
+    z-index: 10;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.header__nav-list {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.header__userbox {
+    margin-top: 2.5rem;
+    margin-left: 40px;
+}
+
+.header__userbox.show {
+    display: block;
+    z-index: 99;
+    position: fixed;
+    bottom: 2.5rem;
+    left: 50%;
+    margin-left: 0;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.no-webp .hero {
+    background-image: url(../img/hero.jpg);
+}
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 775px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    height: 100%;
+    background: rgba(28, 28, 28, 0.23);
+    -webkit-box-shadow: inset 55.4px -55.4px 55.4px rgba(149, 149, 149, 0.035), inset -55.4px 55.4px 55.4px rgba(255, 255, 255, 0.035);
+    box-shadow: inset 55.4px -55.4px 55.4px rgba(149, 149, 149, 0.035), inset -55.4px 55.4px 55.4px rgba(255, 255, 255, 0.035);
+    -webkit-backdrop-filter: blur(38.78px);
+    backdrop-filter: blur(38.78px);
+}
+
+/* @-moz-document url-prefix() {
+    .no-webp .hero::before {
+    background-image: url(../img/blure.png);
+    }
+    .hero::before {
+        background-size: cover;
+        background-position: center;
+    }
+} */
+
+.hero__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 5.3125rem;
+}
+
+.hero__description {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 45%;
+    flex: 0 1 45%;
+    position: relative;
+    z-index: 2;
+}
+
+.hero__title {
+    /*margin-bottom: 1.3125rem;*/
+}
+
+.hero__title span {
+    display: block;
+    line-height: unset;
+    margin-top: 1.125rem;
+    font-weight: 300;
+    font-size: 1.6875rem;
+    text-transform: uppercase;
+    color: var(--color-light);
+}
+
+.hero__title span b {
+    font-weight: 700;
+}
+
+.no-webp .hero__btn {
+    background: url(../img/btn-1.png) center center no-repeat;
+}
+
+.hero__btn {
+    width: 18.4375rem;
+    height: 3.5rem;
+    position: relative;
+    border: 0;
+    font-size: 0.9375rem;
+    font-weight: bold;
+    line-height: 1.45;
+    text-align: center;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 8px 0 -4px #b78857;
+    box-shadow: 0px 8px 0 -4px #b78857;
+    margin-top: 3rem;
+}
+
+.hero__btn:hover {
+    color: #000;
+    -webkit-box-shadow: 0px 8px 0 -4px rgba(183, 136, 87, 0.5);
+    box-shadow: 0px 8px 0 -4px rgba(183, 136, 87, 0.5);
+}
+
+.hero__btn:active {
+    -webkit-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    transform: translateY(5px);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.hero__btn span {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    top: -20px;
+    font-weight: 500;
+    font-size: 0.625rem;
+    letter-spacing: 0.18em;
+    background: var(--color-light);
+    padding: 0.625rem 1.75rem;
+    border-radius: 0.25rem;
+}
+
+.calculation {
+    position: relative;
+    z-index: 3;
+    padding-bottom: 2.125rem;
+}
+
+.calculation__heading-description {
+    font-size: 1rem;
+}
+
+.calculation__heading {
+    padding-top: 3.3125rem;
+    text-align: center;
+}
+
+.calculation__heading .section-heading__title,
+.calculation__heading h2 {
+    margin-bottom: 20px;
+}
+
+.calculation__heading .section-heading__description,
+.calculation__heading p {
+    width: 70%;
+    margin: 0px auto;
+}
+
+.calculation__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 16px -20px;
+}
+
+.calculation__health-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 0.625rem;
+}
+
+.calculation__download {
+    width: 100%;
+    position: relative;
+    margin-bottom: 2.0625rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.download__diagram {
+    padding: 1.6875rem 2.8125rem;
+}
+
+.calculation__hidden {
+    display: none;
+}
+
+.calculation .calculation__hidden.show {
+    display: block;
+    /*-webkit-animation: show-decr 0.3s linear;*/
+    /*animation: show-decr 0.3s linear;*/
+}
+.compability_matrix .calculation__hidden.show {
+    display: block;
+}
+
+.decryption, .brand_decryption {
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+    display: none;
+}
+
+.decryption.show {
+    display: block;
+    /*-webkit-animation: show-decr 0.3s linear;*/
+    /*animation: show-decr 0.3s linear;*/
+}
+
+.decryption__heading {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 1.875rem;
+}
+
+.decryption__heading-title {
+    font-size: 1.875rem;
+}
+
+.decryption__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.decryption__download {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+    flex-direction: column;
+}
+
+.decryption__btn-bt {
+    position: relative;
+    z-index: 3;
+    margin-top: 2.5rem;
+    padding: 1.6875rem 2.9375rem;
+    letter-spacing: 0.18em;
+}
+
+.decryption__btn-bt .alert-btn {
+    text-transform: none;
+    text-align: left;
+    text-indent: 0;
+}
+
+.metod {
+    background-color: var(--color-light);
+    padding: 3.75rem 0;
+}
+
+.metod__heading {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 1.5625rem;
+}
+
+.metod__heading--low-margin {
+    margin-bottom: 0.9375rem;
+}
+
+.metod__billets {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 120px;
+    margin-bottom: 3.25rem;
+}
+
+.metod__billets--one {
+    max-width: 54.8125rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.metod__billets--one-min {
+    max-width: 45rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.metod__grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.metod__grid-el {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0 1.25rem;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 33%;
+    flex: 0 1 33%;
+    margin-bottom: 3.75rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.0625rem;
+    text-transform: uppercase;
+}
+
+.metod__grid-el--position {
+    -webkit-transform: translateY(52px);
+    -ms-transform: translateY(52px);
+    transform: translateY(52px);
+}
+
+.no-webp .tariff {
+    background-image: url(../img/tariff-bg.png);
+}
+
+.tariff {
+    padding-top: 5rem;
+    padding-bottom: 13.75rem;
+    background-size: cover;
+}
+
+.tariff__heading {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 4.5625rem;
+}
+
+.tariff__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0 -25px;
+}
+
+.tariff__item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 33%;
+    flex: 0 1 33%;
+    height: 1000px;
+    margin: 0 25px;
+    background: var(--color-light);
+    border-radius: 0.9375rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+}
+
+.tariff__item-heading {
+    padding: 33px 20px 0px 20px;
+    margin-bottom: 2rem;
+}
+
+.no-webp .tariff__title {
+    background: url(../img/line-title.png) bottom center no-repeat;
+}
+
+.tariff__title {
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.875rem;
+    text-align: center;
+}
+
+.tariff__title span {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 2px var(--color-light) solid;
+    top: 0px;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: var(--color-primary);
+    font-weight: 500;
+    background-color: #f9efe0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.tariff__list {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding-left: 65px;
+    padding-right: 1.25rem;
+}
+
+.tariff__list li {
+    font-weight: 300;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    letter-spacing: -0.03em;
+    color: var(--color-primary);
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.5625rem;
+}
+
+.tariff__list li::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+}
+
+.no-webp .tariff__btn {
+    background: url(../img/btn-1.png) center center no-repeat;
+}
+
+.tariff__btn {
+    width: 18.4375rem;
+    height: 5.875rem;
+    position: relative;
+    border: 0;
+    font-size: 0.9375rem;
+    font-weight: bold;
+    line-height: 1.45;
+    text-align: center;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 8px 0 -4px #b78857;
+    box-shadow: 0px 8px 0 -4px #b78857;
+    position: absolute;
+    bottom: -7.875rem;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0px);
+    -ms-transform: translate(-50%, 0px);
+    transform: translate(-50%, 0px);
+}
+
+.tariff__btn:hover {
+    color: #000;
+    -webkit-box-shadow: 0px 8px 0 -4px rgba(183, 136, 87, 0.5);
+    box-shadow: 0px 8px 0 -4px rgba(183, 136, 87, 0.5);
+}
+
+.tariff__btn:active {
+    -webkit-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    transform: translateY(5px);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.tariff__btn:active {
+    -webkit-transform: translate(-50%, 5px);
+    -ms-transform: translate(-50%, 5px);
+    transform: translate(-50%, 5px);
+}
+
+.tariff__price {
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: -0.03em;
+    padding-bottom: 1.25rem;
+    color: var(--color-primary);
+}
+
+.no-webp .creator {
+    background-image: url(../img/creator-bg.jpg);
+}
+
+.creator {
+    position: relative;
+    width: 100%;
+	height: 47.375rem; 
+    background-color: var(--color-light);
+    background-position: center center;
+    background-size: cover;
+    padding-top: 3.75rem;
+}
+
+.creator__heading {
+    width: 50%;
+    text-align: left;
+}
+
+.creator__title {
+    margin-bottom: 1.8125rem;
+}
+
+.creator__description {
+    margin-bottom: 32px;
+}
+
+.creator__text {
+    width: 66%;
+}
+
+.no-webp .creator__info {
+    background: url(../img/creator.png) center center no-repeat;
+}
+
+.creator__info {
+    position: absolute;
+    bottom: 47px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 22.1875rem;
+    height: 8.25rem;
+}
+
+.creator__img {
+    display: none;
+}
+.creator__imgm {
+    display: none;
+}
+
+.creator__info-head {
+    width: 100%;
+    padding: 4px 26px 20px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.creator__itst-bl {
+    /* padding-right: 50px; */
+}
+
+.creator__info-head .link::before {
+    top: 0px;
+}
+
+p strong {
+    font-weight: bold;
+}
+
+/*
+.wc_payment_methods.payment_methods.methods {
+    display: none;
+}
+*/
+.wc_payment_methods img {
+    max-height: 52px;
+    vertical-align: middle;
+}
+
+
+.creator__name-bl {
+    font-size: 0.9375rem;
+}
+
+.creator__link {
+    font-size: 0.9375rem !important;
+    padding-left: 25px !important;
+}
+
+.creator__link::before {
+    width: 15px;
+    height: 15px;
+}
+
+.creator__info-text {
+    font-weight: 300;
+    padding: 0px 10px;
+    font-size: 15px;
+    text-align: center;
+}
+.zapr-inst {
+	font-size: 10px;
+
+}
+.footer {
+    background-color: var(--color-light);
+    padding: 27px 0;
+}
+
+.footer__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+.footer__payment-bl p {
+    margin-bottom: 5px;
+}
+
+.footer__politics {
+    font-weight: 300;
+    color: var(--color-primary);
+    text-decoration: underline;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.footer__politics:hover {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    color: #000;
+    text-decoration: none;
+}
+
+.footer__btn {
+    padding: 15px 41px;
+}
+
+.no-webp .logo {
+    background-image: url(../img/logo-bg.png);
+}
+
+.logo {
+    width: 11.9375rem;
+    height: 8.4375rem;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.logo img {
+    -webkit-transform: translate(0px, -19px);
+    -ms-transform: translate(0px, -19px);
+    transform: translate(0px, -19px);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    display: none;
+    top: 40px;
+    height: 20px;
+    width: 35px;
+    overflow: visible;
+    position: relative;
+    z-index: 2;
+}
+
+.burger span {
+    width: 35px;
+    background-color: var(--color-papaya);
+    display: block;
+    border-radius: 5px;
+    height: 4px;
+    opacity: 1;
+    position: absolute;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.burger span.l1 {
+    top: 0px;
+    left: 0px;
+}
+
+.burger span.l2 {
+    top: 10px;
+    left: 0px;
+    width: 35px;
+}
+
+.burger span.l3 {
+    top: 20px;
+    left: 0px;
+    width: 35px;
+}
+
+.burger.close {
+    z-index: 100;
+}
+
+.burger.close span {
+    background-color: var(--color-primary);
+}
+
+.burger.close .l1 {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 35px;
+    top: 9px;
+    left: -4px;
+}
+
+.burger.close .l2 {
+    opacity: 0;
+}
+
+.burger.close .l3 {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 35px;
+    top: 9px;
+    left: -4px;
+}
+
+.btn {
+    border-radius: 0.625rem;
+    background: -o-linear-gradient(356.17deg, #fdefd1 -3.42%, #fbe4b8 101.88%);
+    background: linear-gradient(93.83deg, #fdefd1 -3.42%, #fbe4b8 101.88%);
+    position: relative;
+    border: 0;
+    cursor: pointer;
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    font-size: 0.9375rem;
+    font-weight: bold;
+    line-height: 1.45;
+    text-align: center;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    -webkit-box-shadow: 0px 4px 0px 0px #ddb96d;
+    box-shadow: 0px 4px 0px 0px #ddb96d;
+    /*&::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 4px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: rem(10);
+      background-color: #ddb96d;
+      @include transition;
+  }*/
+}
+
+.btn .alert-btn {
+    display: none;
+    opacity: 0;
+}
+
+.no-webp .btn--lock {
+    background-image: url(../img/lock.png);
+}
+
+
+
+.btn--lock {
+    text-indent: 1.25rem;
+    background: none;
+    background-color: #fbe4b8;
+    background-size: 15px 15px;
+    background-position: left 35px top 29px;
+    background-repeat: no-repeat;
+}
+
+.btn:hover {
+    color: #000;
+    -webkit-box-shadow: 0px 4px 0px 0px rgba(221, 185, 109, 0.5);
+    box-shadow: 0px 4px 0px 0px rgba(221, 185, 109, 0.5);
+}
+
+.btn:active {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    transform: translateY(5px);
+}
+
+.btn .alert-btn {
+    top: -100px;
+    left: 12px;
+}
+
+.btn--lock:hover .alert-btn {
+    display: block;
+    opacity: 1;
+}
+
+.userbox__btn {
+    padding: 15px 41px;
+    top: 0px;
+}
+
+.userbox__btn:active {
+    top: 5px;
+}
+
+.menu__link {
+    padding: 20px 0;
+    font-weight: 700;
+    font-size: 1.0625rem;
+    line-height: 1.45;
+    text-align: center;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    color: var(--color-light);
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.menu__link:hover {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    color: var(--color-primary);
+}
+
+.form {
+    overflow: hidden;
+}
+
+.form__item {
+    margin: 0px 20px 23px 20px;
+    position: relative;
+}
+
+.form__item .just-validate-error-label {
+    width: 200%;
+    position: absolute;
+    left: 5px;
+    /*bottom: -30px;*/
+}
+
+.form__input {
+    font-family: "Roboto", sans-serif;
+    padding: 1.4375rem 1.75rem;
+    min-width: 17.625rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: -0.03em;
+    color: var(--color-primary);
+    border-radius: 0.625rem;
+    border: 0;
+    outline: 0;
+}
+
+.form__input::-webkit-input-placeholder {
+    font-weight: 300;
+    color: #ababab;
+}
+
+.form__input::-moz-placeholder {
+    font-weight: 300;
+    color: #ababab;
+}
+
+.form__input:-ms-input-placeholder {
+    font-weight: 300;
+    color: #ababab;
+}
+
+.form__input::-ms-input-placeholder {
+    font-weight: 300;
+    color: #ababab;
+}
+
+.form__input::placeholder {
+    font-weight: 300;
+    color: #ababab;
+}
+
+.form__input.just-validate-error-field {
+    color: #b81111;
+    border: 0;
+    outline: 0;
+}
+
+.no-webp .form__btn {
+    background: url(../img/btn-2.png) center center no-repeat;
+}
+
+.no-webp .form__btn {
+    background: url(../img/btn-1.png) center center no-repeat;
+}
+
+.form__btn {
+    width: 17.5rem;
+    height: 5.875rem;
+    width: 18.4375rem;
+    height: 5.875rem;
+    position: relative;
+    border: 0;
+    font-size: 0.9375rem;
+    font-weight: bold;
+    line-height: 1.45;
+    text-align: center;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 8px 0 -4px #b78857;
+    box-shadow: 0px 8px 0 -4px #b78857;
+}
+
+.form__btn:hover {
+    color: #000;
+    -webkit-box-shadow: 0px 8px 0 -4px rgba(183, 136, 87, 0.5);
+    box-shadow: 0px 8px 0 -4px rgba(183, 136, 87, 0.5);
+}
+
+.form__btn:active {
+    -webkit-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    transform: translateY(5px);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.health-card {
+    margin-top: 2.25rem;
+    padding-top: 1.25rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    /*
+  &__swipe {
+      display: none;
+      @include mobile {
+          display: block;
+          margin-top: rem(20);
+      }
+  }
+  */
+}
+
+.health-card__diagram {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 55%;
+    flex: 0 1 55%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.health-card__img {
+    width: 97%;
+    min-height: 638px;
+}
+
+.health-card__destination {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    margin-top: 1.875rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.health-card__title {
+    text-align: left;
+    margin-bottom: 1.875rem;
+}
+
+.health-card__info {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.health-card__table-block {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+}
+
+.health-card__table {
+    margin-top: 0.625rem;
+}
+
+.table {
+    width: 100%;
+    background-color: var(--color-light);
+    border-radius: 10px 10px 0px 0px;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    letter-spacing: -0.03em;
+	border: none;
+}
+
+.table__row {
+    color: var(--color-light);
+}
+
+.table__row--purple {
+    background-color: #993399;
+}
+
+.table__row--blue {
+    background-color: #3366ff;
+}
+
+.table__row--light-blue {
+    background-color: #32ccfe;
+}
+
+.table__row--green {
+    background-color: #66cc66;
+}
+
+.table__row--yellow {
+    background-color: #feff99;
+    color: var(--color-primary);
+}
+
+.table__row--orange {
+    background-color: #fe9901;
+}
+
+.table__row--red {
+    background-color: #cd3333;
+}
+
+.table__row--result {
+    color: var(--color-primary);
+}
+
+.table__head {
+    padding: 18px 0 5px 0;
+    text-align: center;
+    color: var(--color-primary);
+	border: none;
+}
+
+.table__coll {
+    padding: 5px 0px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.25rem;
+	border: none;
+}
+
+.table__coll:not(.table__coll:last-child) {
+    border-right: 2px var(--color-light) solid;
+}
+
+.table__coll:last-child {
+    text-align: left;
+    padding-left: 5px;
+}
+
+.no-webp .alert {
+    background-image: url(../img/triangle.png);
+}
+
+.alert {
+	width: 120px;
+    text-align: left;
+    position: absolute;
+    z-index: 2;
+    padding: 1.125rem;
+    background: #f3f3f3;
+    border-radius: 0.4375rem;
+    font-weight: 300;
+    font-size: 0.8125rem;
+    background-repeat: no-repeat;
+    background-position: bottom -10px left 10px;
+    border-radius: 10px;
+    padding: 20px;
+    -webkit-animation: show-decr 0.5s linear;
+    animation: show-decr 0.5s linear;
+}
+
+.alert::after {
+    content: "";
+    position: absolute;
+    /* РђР±СЃРѕР»СЋС‚РЅРѕРµ РїРѕР·РёС†РёРѕРЅРёСЂРѕРІР°РЅРёРµ */
+    left: 20px;
+    bottom: -20px;
+    /* РџРѕР»РѕР¶РµРЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° */
+    border: 10px solid transparent;
+    /* РџСЂРѕР·СЂР°С‡РЅС‹Рµ РіСЂР°РЅРёС†С‹ */
+    border-top: 10px solid #f3f3f3;
+    /* Р”РѕР±Р°РІР»СЏРµРј С‚СЂРµСѓРіРѕР»СЊРЅРёРє */
+}
+
+.alert-btn {
+    text-align: left;
+    position: absolute;
+    z-index: 3;
+    padding: 1.125rem;
+    background: #f3f3f3;
+    border-radius: 0.4375rem;
+    font-weight: 300;
+    font-size: 0.8125rem;
+    background-repeat: no-repeat;
+    background-position: bottom -10px left 10px;
+    border-radius: 10px;
+    padding: 20px;
+    -webkit-animation: show-decr 0.5s linear;
+    animation: show-decr 0.5s linear;
+    text-transform: none;
+}
+
+.alert-btn::after {
+    content: "";
+    position: absolute;
+    /* РђР±СЃРѕР»СЋС‚РЅРѕРµ РїРѕР·РёС†РёРѕРЅРёСЂРѕРІР°РЅРёРµ */
+    left: 20px;
+    bottom: -20px;
+    /* РџРѕР»РѕР¶РµРЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° */
+    border: 10px solid transparent;
+    /* РџСЂРѕР·СЂР°С‡РЅС‹Рµ РіСЂР°РЅРёС†С‹ */
+    border-top: 10px solid #f3f3f3;
+    /* Р”РѕР±Р°РІР»СЏРµРј С‚СЂРµСѓРіРѕР»СЊРЅРёРє */
+}
+
+.destination {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.destination__title {
+    margin-bottom: 0.625rem;
+}
+
+.destination__description {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    margin-bottom: 1.25rem;
+}
+
+.destination__item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 33%;
+    flex: 0 1 33%;
+    padding: 0 0.625rem;
+    height: auto;
+    margin-bottom: 1.25rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.destination__item:nth-of-type(3) {
+    /* if pixel perfect
+  transform: translate(54px, 0px);
+  */
+}
+
+.destination__item:nth-of-type(3) .sheme__diagram {
+    background: none;
+}
+
+.scheme {
+  width: 11.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.scheme__names {
+  flex: 0 1 auto;
+  margin-right: 1rem;
+  font-size: 1.0625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 7.1875rem;
+}
+.scheme__names p {
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.scheme__names p:nth-of-type(1) {
+  transform: translate(0px, -7px);
+}
+.scheme__names p:nth-of-type(2) {
+  transform: translate(0px, 5px);
+}
+.scheme__diagram {
+  flex: 0 1 7.8125rem;
+  height: 7.1875rem;
+  position: relative;
+}
+.scheme__diagram--result {
+  background: none;
+  margin: 0 auto;
+  height: 3.125rem;
+}
+.scheme__diagram--result .scheme__val--result {
+  left: 0px;
+  right: auto;
+  top: 0px;
+}
+@media (max-width: 50em) {
+  .scheme__diagram--result .scheme__val--result {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.scheme__diagram--result .scheme__val::before, .scheme__diagram--result .scheme__val::after {
+  display: none;
+}
+.scheme__val {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 2.8125rem;
+  height: 2.8125rem;
+  border-radius: 50%;
+  font-weight: 500;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  background: linear-gradient(98.72deg, #dbc2a7 -6.18%, #c4a380 206.55%);
+  color: var(--color-light);
+}
+.scheme__val::before {
+  content: "";
+  position: absolute;
+  width: 42%;
+  height: 1px;
+  background-color: #745637;
+  top: 50%;
+  right: -43%;
+  z-index: -1;
+}
+.scheme__val--val1 {
+  top: -5px;
+  left: 0px;
+}
+.scheme__val--val2 {
+  bottom: -5px;
+  left: 0px;
+}
+.scheme__val--result {
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.scheme__val--result::before {
+  width: 35%;
+  right: 100%;
+}
+.scheme__val--result::after {
+  content: "";
+  background-color: #745637;
+  position: absolute;
+  width: 1px;
+  height: 80px;
+  top: -17px;
+  right: 133%;
+}
+
+.decr-item {
+    /*padding: 0.625rem 3.75rem 0.625rem 3.75rem;*/
+    background-color: var(--color-light);
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 0.625rem;
+    cursor: pointer;
+}
+
+.decr-item::before,
+.decr-item::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-primary);
+    right: 2.1875rem;
+    top: 1.375rem;
+    width: 0.75rem;
+    height: 0.125rem;
+    border-radius: 50%;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    z-index: 0;
+}
+
+.decr-item::after {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.decr-item__title {
+    padding: 0.625rem 3.75rem 0.625rem 3.75rem;
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: var(--color-primary);
+	font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+.decr-item__textmain{
+    font-weight: bold;
+}
+.decr-item__description {
+    font-weight: 300;
+    visibility: hidden;
+    opacity: 0;
+    margin-top: 0.9375rem;
+    font-size: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    display: none;
+}
+
+.decr-item__energy {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    background: #c4a380;
+    color: #fff;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.decr-item__img {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 2 71rem;
+    flex: 0 2 71rem;
+    margin-right: 20px;
+}
+
+.decr-item__text {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding-left: 40px;
+    position: relative;
+}
+
+.decr-item__text ul {
+    list-style-type: disc;
+}
+
+.decr-item__text ol {
+    list-style-type: decimal;
+}
+
+.no-webp .decr-item--lock {
+    background-image: url(../img/lock.png);
+}
+
+.decr-item--lock {
+    background-size: 15px 15px;
+    background-position: left 35px top 15px;
+    background-repeat: no-repeat;
+}
+
+.decr-item.show .decr-item__description {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    -webkit-animation: show-decr 1s linear;
+    animation: show-decr 1s linear;
+}
+
+.decr-item.show::after {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.decr-item .alert {
+    top: -60px;
+    left: 13px;
+}
+
+.billet {
+    padding: 4.5rem 1.875rem 1.875rem 1.875rem;
+    background-color: var(--color-light);
+    -webkit-box-shadow: 0px 0px 40px 7px rgba(220, 220, 220, 0.16);
+    box-shadow: 0px 0px 40px 7px rgba(220, 220, 220, 0.16);
+    border-radius: 10px;
+    font-size: 0.9375rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    position: relative;
+}
+
+.billet b {
+    font-weight: 700;
+}
+
+.no-webp .billet::before {
+    background-image: url(../img/done.png);
+}
+
+.billet::before {
+    content: "";
+    position: absolute;
+    width: 6.6875rem;
+    height: 2.5rem;
+    top: 0px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: #c4a380;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 0px 0px 0.4375rem 0.4375rem;
+}
+
+.grid-el {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.grid-el__img {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    height: 160px;
+    margin-bottom: 1.25rem;
+}
+
+.grid-el__img img {
+    height: 160px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.grid-el__description {
+    width: 80%;
+    margin: 0px auto;
+}
+
+.payment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.payment__method {
+    width: 50px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.payment__method:not(.payment__method:last-child) {
+    margin-right: 0.625rem;
+}
+
+.payment__method--master {
+    background-image: url(../img/master.svg);
+}
+
+.payment__method--visa {
+    background-image: url(../img/visa.svg);
+}
+
+.payment__method--mir {
+    background-image: url(../img/mir.svg);
+}
+
+.loading {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: var(--color-papaya);
+    -webkit-animation: show-decr 0.3s linear;
+    animation: show-decr 0.3s linear;
+}
+
+@media (max-width: 1400px) {
+    .tariff__heading {
+        margin-bottom: 2.0625rem;
+    }
+
+    .tariff__btn {
+        bottom: -7.1875rem;
+    }
+    .tariff__price {
+        font-size: 2rem;
+    }
+    .grid-el__img {
+        margin-bottom: 0.3125rem;
+    }
+    .grid-el__description {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1210px) {
+    .header__logo {
+        margin-right: calc(0px + 62 * ((100vw - 320px) / 890));
+    }
+    .header__userbox {
+        margin-left: calc(0px + 40 * ((100vw - 320px) / 890));
+    }
+    .metod__billets {
+        gap: calc(20px + 100 * ((100vw - 320px) / 890));
+    }
+    .tariff__list {
+        padding-left: calc(20px + 45 * ((100vw - 320px) / 890));
+    }
+}
+
+@media (max-width: 1024px) {
+    .header__nav {
+        display: none;
+    }
+    .header__nav-list {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        /*gap: 1.25rem;*/
+    }
+	.header__nav-list li{
+        margin: 20px 0 0 0;
+    }
+    .header__userbox {
+        display: none;
+    }
+    .hero__description {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 90%;
+        flex: 0 1 90%;
+    }
+    .calculation__form {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .metod__grid-el {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+        flex: 0 1 50%;
+    }
+    .metod__grid-el--position {
+        -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    .tariff {
+        padding-bottom: 12.25rem;
+    }
+    .tariff__items {
+        margin: 0 -10px;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .tariff__item {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 40%;
+        flex: 0 1 40%;
+        margin: 0 10px;
+        margin-bottom: 11.25rem;
+    }
+    .creator__heading {
+        width: 70%;
+    }
+    .creator__text {
+        width: 80%;
+    }
+    .burger {
+        display: block;
+    }
+    .menu__link {
+        color: var(--color-primary);
+    }
+    .health-card {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .health-card__diagram {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+        margin-bottom: 1.25rem;
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+    }
+    .health-card__img {
+        width: 100%;
+    }
+    .health-card__destination {
+        -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+        order: 3;
+    }
+    .health-card__title {
+        text-align: center;
+    }
+    .health-card__info {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+    }
+    .health-card__personality {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 30%;
+        flex: 0 1 30%;
+    }
+    .health-card__table-block {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 65%;
+        flex: 0 1 65%;
+    }
+}
+
+@media (max-width: 50em) {
+    .health-card__destination {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .destination__item {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+        flex: 0 1 50%;
+        margin-bottom: 2.5rem;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .destination__scheme {
+        margin: 0 auto;
+    }
+    .scheme__diagram--result .scheme__val--result {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .heading-title {
+        font-size: 2.375rem;
+    }
+    .heading-description {
+        font-size: 1.4375rem;
+    }
+    .no-webp .hero {
+        background-image: url(../img/hero-mobile.jpg);
+    }
+    .hero__description {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+    }
+    .hero__title span {
+        font-size: 1.5625rem;
+    }
+    .decryption__heading {
+        margin-bottom: 2.5rem;
+        width: 100%;
+    }
+    .metod__heading {
+        width: 100%;
+    }
+    .metod__billets {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .metod__billet {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+    }
+    .tariff__heading {
+        width: 100%;
+    }
+    .tariff__item {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 80%;
+        flex: 0 1 80%;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+    }
+    .creator__heading {
+        width: 100%;
+    }
+    .creator__text {
+        width: 80%;
+    }
+    .footer__container {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .footer__payment-bl p {
+        margin-bottom: 15px;
+    }
+    .footer__payment-bl {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+    }
+    .footer__politics {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+    }
+    .footer__btn {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+    }
+    .health-card__diagram {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .health-card__img {
+		/*width: 105%;*/
+		min-height: 0;
+		margin-top: 15px;
+    }
+    .health-card__personality {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+    }
+    .health-card__table-block {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+    }
+    .destination {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .destination__title {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .decr-item {
+        /*padding: 0.625rem 2.5rem 0.625rem 1.875rem;*/
+    }
+    .decr-item .decr-item__title{
+        padding: 0.625rem 2.5rem 0.625rem 1.875rem;
+        width: 100%;
+    }
+    .decr-item .decryption-content{
+        padding: 0 2.5rem 0.625rem 1.875rem;
+    }
+    .decr-item::before,
+    .decr-item::after {
+        right: 0.9375rem;
+    }
+    .decr-item--lock {
+        background-position: left 10px top 15px;
+    }
+    .tariff__item {
+        height: auto;
+    }
+}
+@media(min-width: 768px){
+	.tariff__items{
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	#tariff .tariff__item {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 2 50%;
+  flex: 0 1 45%;
+  height: 1000px;
+  margin: 0 25px;
+    margin-bottom: 0px;
+  background: var(--color-light);
+  border-radius: 0.9375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 250px;
+}
+#tariff .tariff__item:nth-child(3), #tariff .tariff__item:nth-child(4){
+ margin-bottom: 0;
+ height: 770px;
+}
+#tariff .tariff__item:nth-child(1), #tariff .tariff__item:nth-child(2){
+ height: 480px;
+}
+
+}
+.health-card__diagram.person.column1{
+    width: 48%;
+    margin-right: 20px;
+}
+.health-card__destination.destination .column1{
+    margin: 0px;
+}
+
+@media screen and (max-width: 480px) {
+    .decr-item .decr-item__title{
+        padding: 0.625rem 2.5rem 0.625rem 1.875rem;
+        width: 100%;
+    }
+    .decr-item .decryption-content{
+        padding: 0 1rem 0.625rem 1rem;
+    }
+    .compability_matrix .person .destination__scheme{
+        margin:0px;
+    }
+    .person .scheme__val{
+        font-size: 3px;
+    }
+    .health-card__destination.destination .destination__item.column1:nth-child(1){
+        margin-bottom: 0px;
+    }
+    .form__items{
+        margin-bottom: 10px;
+    }
+    .form__item {
+        margin: 0px 20px 16px 20px;
+    }
+    .form__item .just-validate-error-label{
+        font-size: 10px;
+    }
+    .form__input {
+        font-size: 1rem;
+    }
+    .form__btn{
+        height: 5rem;
+    }
+    .compability_matrix .health-card{
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    .compability_matrix .health-card__diagram.column1
+    {
+        margin-top: 0px;
+        width: 44%;
+    }
+    .compability_matrix .calculation__health-card.health-card > .columns{
+        flex-direction: row;
+    }
+    .compability_matrix #health-card__img{
+        height: 100% !important;
+    }
+    .person .scheme__val{
+        width: 1rem;
+        height: 1rem;
+        font-size: 0.5rem;
+    }
+    .person .scheme__diagram{
+        height: 1rem;
+        flex: 0 1 5.813rem;
+    }
+    .person .scheme__val--result::after {
+        height: 26.5px;
+        top: -5px;
+        right: 133%;
+    }
+    .person .health-card__destination{
+        width: 100%;
+    }
+    .person .scheme__diagram{
+        font-size: 0.1rem;
+    }
+    .person .destination__scheme.scheme:nth-child(1){
+        margin-right: 9px;
+    }
+    .person .destination__scheme.scheme{
+        width: 3rem;
+        margin-right: 0px;
+    }
+    .person .scheme__names.s-names{
+        margin-bottom: -23px;
+        margin-right: -1px;
+    }
+    .person .scheme__names{
+        font-size: 0.3rem;
+        margin-right: 4px;
+        height: 2rem;
+    }
+    .person .scheme__val--val1 {
+        top: -14px;
+    }
+    .person .scheme__val--val2 {
+        bottom: -13px;
+    }
+    .person .scheme__val--result.z::after{
+        /*top: 5px;*/
+    }
+    .person .scheme__val--result.z{
+        right: -4px;
+        left: 28px;
+        position: absolute;
+    }
+    .person .scheme__val--result.s{
+        top: 23px;
+    }
+    .person .scheme__val--result{
+        right: -12px;
+        left: 28px;
+        position: absolute;
+    }
+    .person .health-card__destination.destination .columns{
+        flex-direction: row;
+    }
+    .person .health-card__destination.destination .columns .column1{
+        margin: 0px;
+        padding: 0px;
+    }
+    h1 {
+        font-size: 2.25rem;
+    }
+    .heading-title {
+        /*font-size: 1.875rem*/
+        font-size: 1.2rem
+    }
+    .heading-description {
+        font-size: 1rem
+        /*font-size: 1.25rem*/
+    }
+    .hero {
+        height: 100vh;
+    }
+    .hero__container {
+        padding-top: 7.5rem;
+    }
+    .hero__title span {
+        font-size: 1.25rem;
+    }
+    .calculation__heading .section-heading__description,
+    .calculation__heading p {
+        width: 100%;
+        font-size: 0.75rem;
+    }
+    .decryption__heading {
+        margin-bottom: 0.9375rem;
+    }
+	.decryption__heading h5{
+        text-align: left;
+    }
+    .decryption__heading-title {
+        font-size: 1.25rem;
+    }
+    .metod__grid-el {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+        margin-bottom: 0.625rem;
+    }
+    .tariff {
+        padding-bottom: 3.125rem;
+    }
+    .tariff__item {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+    }
+    .creator {
+        background-image: none !important;
+        /*margin-bottom: 150px;*/
+    }
+    .creator__heading {
+        text-align: center;
+    }
+    .creator__text {
+        width: 100%;
+    }
+    .creator__info {
+        width: 100%;
+        background-size: cover;
+        position: relative;
+        bottom: 0px;
+    }
+    .creator__floating {
+        padding: 0px 20px;
+        text-align: center;
+        margin-top: 1.25rem;
+    }
+    .creator__img {
+        display: block;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+        width: 100%;
+    }
+	.creator__imgm {
+		width: 300px;
+		display: block;
+		margin: 20px auto -25px auto;
+		text-align: center;
+		display: block;
+		background: #FFFFFF;
+		box-shadow: 251px 105px 109px rgba(128, 128, 128, 0.01), 141px 59px 92px rgba(128, 128, 128, 0.05), 63px 26px 68px rgba(128, 128, 128, 0.09), 16px 7px 37px rgba(128, 128, 128, 0.1), 0px 0px 0px rgba(128, 128, 128, 0.1);
+		transform: rotate(4.27deg);
+    }
+	.creator__name-bl {
+    margin-top: 5px;
+	}
+	.link--inst{
+	
+	}
+    /*
+	.creator__info-head {
+        padding: 18px 10px 16px 15px;
+    }
+	*/
+    .creator__link {
+        padding-left: 20px;
+    }
+    .creator__info-text {
+        padding: 15px 20px;
+    }
+    .webp .creator {
+        background-image: none !important;
+    }
+    .webp .creator {
+        background-image: none;
+    }
+    .footer__container {
+        gap: 0rem;
+    }
+    .footer__payment-bl {
+        margin-bottom: 1.25rem;
+    }
+    .footer__politics {
+        margin-bottom: 1.25rem;
+    }
+    .health-card__img {
+        /*width: 110%;*/
+		min-height: 0;
+		margin-top: 15px;
+        /*min-height: 480px;*/
+    }
+    .health-card__info {
+        overflow: hidden;
+    }
+    .health-card__table-block {
+        overflow-x: scroll;
+    }
+    .table {
+        font-size: 0.75rem;
+    }
+    .table__coll {
+        font-size: 0.875rem;
+    }
+    .destination__title {
+        width: 100%;
+    }
+    .decr-item__description {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .decr-item__energy {
+        left: 0px;
+    }
+    .decr-item__img {
+        width: 100%;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        margin-top: 1.25rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+    }
+    .decr-item__text {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+        padding-left: 30px;
+		font-size: 14px;
+    }
+    .decr-item .alert {
+        top: -80px;
+        left: -15px;
+    }
+    .grid-el__description {
+        width: 100%;
+    }
+}
+
+@media (max-width: 37.5em) {
+    .destination__item {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) and (min-width: 21.25em) and (max-width: 30em) {
+    .creator__info-head {
+        padding-right: clamp( 1.25rem, 2.3214285714rem + -3.5714285714vw, 1.5625rem);
+    }
+}
+
+@media print {
+    .health-card__diagram {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 35%;
+        flex: 0 1 35%;
+    }
+    .health-card__destination {
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+}
+
+.webp .link::before {
+    /*background-image: url(../img/inst.webp);
+	background-image: url(../img/vk.png);*/
+}
+.link--inst::before {
+   
+	background-image: url(../img/inst.webp);
+}
+.link--inst{
+	font-weight: 500 !important;
+}
+.link--vk::before {
+    background-image: url(../img/vk.png);
+	
+}
+.link--vk {
+    font-weight: 500 !important;
+}
+.group-vk {
+    
+}
+.creator__itst-bl {
+margin-top: 5px;
+}
+.creator__name-bl {
+margin-top: 10px;
+}
+.webp .swipe {
+    background: url(../img/swipe.webp) center center no-repeat;
+}
+
+.webp .hero {
+    background-image: url(../img/hero.webp);
+}
+
+@-moz-document url-prefix() {
+    .webp .hero::before {
+        background-image: url(../img/blure.webp);
+    }
+}
+
+.webp .hero__btn {
+    background: url(../img/btn-1.webp) center center no-repeat;
+}
+
+.webp .tariff {
+    background-image: url(../img/tariff-bg.webp);
+}
+
+.webp .tariff__title {
+    background: url(../img/line-title.webp) bottom center no-repeat;
+}
+
+.webp .tariff__btn {
+    background: url(../img/btn-1.webp) center center no-repeat;
+}
+
+.webp .creator {
+    background-image: url(../img/creator-bg2.jpg);
+}
+
+.webp .creator__info {
+    background: url(../img/creator.webp) center center no-repeat;
+}
+
+.webp .logo {
+    background-image: url(../img/logo-bg.webp);
+}
+
+.webp .btn--lock {
+    background-image: url(../img/lock.webp);
+}
+
+.webp .form__btn {
+    background: url(../img/btn-2.webp) center center no-repeat;
+}
+
+.webp .form__btn {
+    background: url(../img/btn-1.webp) center center no-repeat;
+}
+
+.webp .alert {
+    background-image: url(../img/triangle.webp);
+}
+
+.webp .decr-item--lock {
+    background-image: url(../img/lock.webp);
+}
+
+.webp .billet::before {
+    background-image: url(../img/done.webp);
+}
+
+@media screen and (max-width: 768px) {
+    .webp .hero {
+        background-image: url(../img/hero-mobile.webp);
+    }
+    .health-card__destination.destination .destination__item.column1:nth-child(1){
+        /*margin-bottom:30px;*/
+    }
+}
+
+.loader {
+  display: none;
+}
+.loader.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  min-height: 100%;
+  background: var(--color-papaya);
+  top: 0px;
+  height: 0px;
+  z-index: 998;
+}
+.loader.active .lds-dual-ring {
+  display: inline-block;
+  position: relative;
+  z-index: 999;
+  width: 80px;
+  height: 80px;
+}
+.loader.active .lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.disabled {
+    cursor: default !important;
+    pointer-events: none;
+    filter: grayscale(0.4);
+}
+.health-card__img-flex {
+    display:  flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+}
+#health-card__img {
+	width: 100%;
+	height: 100%;
+}
+@media screen and (max-width: 1024px){
+	#health-card__img {
+		width: 100%;
+		height: 100%;
+	}
+}
+@media screen and (max-width: 767px){
+	.health-card__img {
+		width: 100%;
+		height: 100%;
+	}
+	#health-card__img {
+		height: 430px;
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+@media screen and (max-width: 480px){
+	main#primary {
+		padding: 100px 0 50px 0;
+        }
+}
+/*
+#qltgm {
+	bottom: 100px !important;
+	right: -295px !important;
+    left: auto !important;}
+@media screen and (max-width: 480px){
+	#qltgm {
+		right: 50px !important;
+	}
+}
+*/
+.age-changer{
+    display: none;
+}
+
+.age-changer .column1{
+    flex-grow: 1;
+    border: 1px solid #c4a380;
+    border-radius: 15px;
+    height: 40px;
+}
+.age-changer .column1.selected, .age-changer .column1:hover{
+    background: #c4a380;
+    color: white;
+}
+@media ( max-width: 1280px ) {
+    .big-h1 {
+        font-size: 27px;
+        margin-top: 0px !important;
+    }
+}
+
+.brand_decryption ul{
+    list-style: inside;
+}
+
+.decryption-content{
+    padding: 0 3.75rem 0.625rem 3.75rem;
+    display: none;
+}
+.decr-item.show .decryption-content{
+    display: block;
+}
+.features-slider{
+	padding-bottom: 92px;
+	background: #FFFFFF;
+	position: relative;
+}
+.features-slider:before{
+	content: '';
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	background: url(https://matriza-sydbi.ru/wp-content/uploads/2022/12/group-44.svg);
+	top: -2px;
+	right: calc( 50% -  15px);
+border-radius: 1px;
+	
+}
+.features-slider .features-slider-wrapper .slider-item .slider-item-wrapp{
+display: flex !important;
+max-width: 745px;
+justify-content: center;
+margin-left: auto;
+margin-right: auto;
+padding: 50px 75px;
+-webkit-box-shadow: 0px 0px 40px 7px rgba(220, 220, 220, 0.16);
+box-shadow: 0px 0px 40px 7px rgba(220, 220, 220, 0.16);
+}
+.features-slider .features-slider-wrapper .slider-item .slider-item-wrapp{
+	display: flex !important ;
+}
+.slider-text-item{
+	margin-left: 55px;
+}
+
+.features-slider [data-slick-index="2"] img{
+	margin-top: -35px;
+}
+
+.slider-text-item__title{
+ font-weight: 400;
+ font-size: 27px;
+ line-height: 125%;
+ text-transform: uppercase;
+ color: #745637;
+	margin-bottom: 10px;
+}
+.slider-text-item__descr{
+ font-style: normal;
+ font-weight: 300;
+ font-size: 17px;
+ line-height: 122%;
+ color: #745637;	
+}
+.features-next, .features-prew{
+  display: flex;
+  align-items: center;
+  justify-content: center;	
+	width: 50px;
+	height: 50px;
+	background: linear-gradient(98.72deg, #DBC2A7 -6.18%, #C4A380 206.55%);
+  border: none;
+  border-radius: 100%;
+	position: absolute;
+	top: calc( 50% - 8px);
+	cursor: pointer;
+}
+.features-slider .container{
+	position: relative;
+}
+.sertificate{
+	background: #fff;
+}
+@media(min-width: 630px){
+.sertificate .sertificate-slider{
+	padding-top: 60px;
+	padding-bottom: 100px;
+	display: flex;
+	background: #fff;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+}
+.sertificate-img:before{
+content: '';
+background-image: url(https://matriza-sydbi.ru/wp-content/uploads/2022/12/group-45.svg);
+position: absolute;
+width: 55px;
+height: 55px;
+top: calc(50% - 30px);
+left: calc(50% - 20px);
+}
+.sertificate-img{
+	max-width: 30%;
+	position: relative;
+}
+.sertificate-img img{
+	width: 100%;
+	height: auto;
+	
+}
+.sertificate-img:hover:before{
+	cursor: pointer;
+}
+.features-next{
+	right: 20px;
+}
+.features-prew{
+	left: 20px;
+}
+.zoom-sertificate{
+	display: none;
+}
+.close-zoom::before {
+  content: 'в•і';
+  position: relative;
+  width: 18px;
+  height: 30px;
+  color: #fff;
+  background: transparent;
+  display: flex;
+  border-radius: 100%;
+  align-content: center;
+}
+.zoom-sertificate-wrap{
+	position: relative;
+}
+.close-zoom{
+position: absolute;
+top: 0px;
+right: 0px;	
+background: #9F794F;
+position: absolute;
+width: 30px;
+height: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 0;
+cursor: pointer;
+}
+.show-zoom{
+position: fixed;
+top: 0;
+left: 0;
+background: #00000069;
+width: 100%;
+height: 100%;
+z-index: 99999999;
+display: flex;
+align-items: center;
+justify-content: center;	
+}
+.features-prew img{
+transform: rotate(180deg);
+width: 17px;
+height: 17px;
+margin-right: 2px;	
+}
+.features-next img {
+width: 17px;
+height: 17px;
+margin-right: 2px;		
+}
+.features-prev img{
+margin-right: -2px;	
+}
+@media(max-width: 630px){
+
+.sertificate .sertificate-slider{
+	padding-top: 0;
+	padding-bottom: 30px;
+	display: flex;
+	background: #fff;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+	.sertificate-img{
+		max-width: 56%; 
+		margin: auto;
+		display: flex;
+	}
+	.sertificate{
+	padding-top: 25px;
+	}
+	.sertificate-img::before {
+  content: '';
+  background-image: url(https://matriza-sydbi.ru/wp-content/uploads/2022/12/group-45.svg);
+  position: absolute;
+  width: 43px;
+  height: 43px;
+  top: calc(50% - 30px);
+  left: calc(50% - 20px);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+	.slider-text-item__title{
+		font-size: 10px;
+		margin-bottom: 5px;
+	}
+	.slider-text-item__descr{
+		font-size: 9px;
+	}
+	.slider-text-item{
+		margin-left: 15px;
+	}
+    .slider-text-item__descr br{
+        display: none;
+    }
+    .features-next img{
+        margin-right: 0;
+    }
+.features-slider .features-slider-wrapper .slider-item .slider-item-wrapp{
+  max-width: 83%;
+  padding: 0;
+  min-height: 93px;
+  padding-top: 15px;
+  padding-left: 21px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  background: #fff;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+	.features-prew {
+  left: 41px;
+}
+	.features-next {
+  right: 41px;
+}
+
+	.features-slider [data-slick-index="2"] img{
+		margin-top: 0;
+	}
+	.features-slider .slider-img-item  img{
+		width: 55px;
+	}
+		.features-slider button img{
+		width: 8px;
+	}
+	.features-next, .features-prew{
+		width: 17px;
+		height: 17px;
+	}
+	.features-slider::before { 
+	  width: 10px;
+    height: 10px;
+		background-size: contain;
+    background-repeat: no-repeat;
+	}
+	.sertificate-img{
+		display: flex !important;
+	}
+	
+.sertificate .slick-prev::before {
+
+    content: '';
+    background: url(https://matriza-sydbi.ru/wp-content/uploads/2022/12/mask-group1.svg);
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: -16px;
+    left: 43px;
+    opacity: 1;
+}
+	
+.sertificate .slick-next::before {
+    content: '';
+    background: url(https://matriza-sydbi.ru/wp-content/uploads/2022/12/mask-group1.svg);
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: -16px;
+    right: 43px; 
+	  transform: rotate(180deg);
+   opacity: 1;
+}
+	.sertificate .slick-prev:before:hover{
+				background: url(https://matriza-sydbi.ru/wp-content/uploads/2022/12/mask-group2.svg);
+	}
+	.sertificate .slick-next:before:hover{
+		background: url(https://matriza-sydbi.ru/wp-content/uploads/2022/12/mask-group2.svg);
+		
+	}
+		.sertificate .slick-prev:before:focus{
+				background: url(https://matriza-sydbi.ru/wp-content/uploads/2022/12/mask-group2.svg);
+	}
+	.sertificate .slick-next:before:focus{
+		background: url(https://matriza-sydbi.ru/wp-content/uploads/2022/12/mask-group2.svg);
+		
+	}
+	.zoom-sertificate-wrap{
+		max-width: 80%;
+	}
+	.zoom-replace-img{
+		width: 100%;
+	}
+	html .features-slider::before {
+		top: -5px;
+	}
+
+	.features-slider .container{
+	background: #fff;
+	}
+	.features-slider{
+		background: #fff;
+	}
+.sertificate{
+	background: #fff;
+}
+.sertificate  .container{
+	background: #fff;
+}
+.sertificate .sertificate-slider{
+	background: #fff;
+}
+.features-slider .features-slider-wrapper .slider-item .slider-item-wrapp{
+	background: #fff;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.features-slider::before{
+	z-index: 99;
+}
+
+
+@media (max-width: 630px){
+    .features-slider .slider-img-item img {
+      width: 55px;
+      height: auto;
+        }
+            .features-slider .features-slider-wrapper .slider-item .slider-item-wrapp{
+            align-items: center;
+        }
+        .sertificate-img img {
+            width: 100%;
+            height: auto;
+            max-height: 276px;
+          }
+        html body .features-slider::before {
+      top: 10px;
+      right: calc( 50% - 5px);
+        }
+        html .slider-text-item__title{
+            font-size: 12px;
+        }
+        html .slider-text-item__descr {
+      font-size: 11px;
+    }
+        html	.features-next, html .features-prew {
+      width: 18px;
+      height: 17.5px;
+    }
+        .home{
+            overflow-x: hidden !important;
+        }
+        #home{
+                overflow-x: hidden !important;
+        }
+    }
+   
+   @media(min-width: 630px){
+        .zoom-sertificate-wrap{
+            width: auto;
+        height: 97vh;
+        }
+      .features-slider [ data-slick-index="0"] .slider-img-item img{
+           max-width: 159px;
+        }
+    .features-slider	.slick-slide img{
+            max-width: 133px;
+        }
+        .zoom-replace-img{
+            width: 100%;
+        height: 100%;
+        }
+    
+     
+    }
+    .features-slider .slick-slide:first-of-type {
+        display: flex;
+        align-items: center;
+    }
+
+.creator__text {
+	font-size: 17px;
+	}	
+	
+	
+@media screen and (max-width: 480px){
+	.creator__link {
+	
+		/* margin-left: -10px; */
+	}	
+	.creator__name-bl {
+		margin-top: 5px;
+	}
+	.link--inst {
+    font-size: 12px !important;
+	}
+	.creator__text {
+    font-size: 13px !important;
+	margin-bottom: 20px;
+	padding: 0 18px;
+	}
+	.creator__heading {
+    width: 100%;
+	margin-bottom: 10px;
+
+}
+	.creator__floatingn .link--vk {
+	font-size: 13px;
+	padding-left: 25px;
+    padding-top: 5px;
+	}
+	.creator {
+    height: 100%;
+    
+	}
+}	
+</style>
+	<title>Краткое содержание про матрицу судьбы</title>
+</head>
+<body bgcolor="#ffeed5">
+<div class="calculation__heading">
+                    <h2 class="heading-title">Краткое содержание про матрицу судьбы</h2>
+                    <p class="calculation__heading-description heading-description">Бесплатный полный самостоятельный разбор матрицы судьбы по методу Наталии Ладини</p>
+
+                    <p><h2 align="left">Что такое матрица судьбы?</h2></p>
+                    <p align="left">Система самопознания, в которой можно узнать свои основные линии судьбы и индивидуальные «программы». В основе этого метода лежит система 22 Энергий Вселенной (это как 22 Старших аркана Таро, но немного измененные), которые более глубоко характеризуют человека. А уникальность системы в том, что благодаря Матрице вы можете заниматься самосовершенствованием. И узнавать, в каком направлении двигаться, чтобы наконец раскрыть свои таланты.
+<br><br>
+Так, Матрица судьбы показывает не только особенности характера, но и то, что нужно развить, чтобы выполнить жизненное предназначение. А также дает понимание о родовых задачах, творческом потенциале, денежном потоке и причинах проблем со здоровьем. 
+<br><br>
+Впервые о матрице судьбы заговорили в 2006 году, это относительно новый экспресс-метод для изучения личности человека. Его создателем принято считать Наталью Ладини (Маринченко), кармического целителя, мистика, биоэнергетика, мастера рэйки и медитаций, а также таролога и автора книг по эзотерике и самопознанию. 
+</p>
+  <p><h2 align="left">Для чего и когда используется матрица судьбы?</h2></p>
+  <p align="left">В книге «Диагностика предназначения и коррекция судьбы» Наталья Ладини раскрывает свой метод самопознания и анализа как возможность ответить на глубинные вопросы, которые задает себе каждый человек, а именно:
+  <br><br>
+  	<p style="text-align: left; margin-left: 20%;"><i>1. Кто я и для чего живу?</i><br>
+  		<i>2. В чем глубинный смысл проживания на Земле для меня и других людей?</i><br>
+  		<i>3. Почему я родился в этой стране, у этих родителей, именно в это время?</i><br>
+  		<i>4. Какова цель моего прихода в мир?</i><br><br>
+</p>	
+<p align="left">Чаще всего данные вопросы возникают в сложные моменты жизни. Причиной подобного самокопания могут быть: </p><br>
+<p style="text-align: left; margin-left: 20%;"><i>• Периоды, когда в жизни все идет не так, не хватает денег, есть трудности с работой и бизнесом. </i><br><i>• Проблемы в любовных отношениях: их нет вовсе, либо они испорчены изменами, обманом и взаимными претензиями. Есть трудности в отношениях с родственниками и окружающими людьми.</i><br><i>• Отсутствие способности к зачатию, вынашиванию или рождению детей.</i><br><i>• Конфликты в отношениях с детьми.</i><br><i>• Неприятности со здоровьем, серьезные заболевания.</i></p><br>
+<p align="left">Деньги, здоровье и отношения с окружающими людьми демонстрируют правильность действий и шагов в направлении главной жизненной цели — выполнения своего уникального предназначения. Для его реализации даются определенные таланты и способности, которые важно развить и применить. Те люди, которые осознанно или бессознательно не идут по пути предназначения, испытывают трудности. Они должны понять, что делают не так и как это исправить. Метод расчета матрицы судьбы — это один из простых, понятных и доступных способов это сделать. 
+</p>
+<p><h2 align="left">Позиции в матрице судьбы</h2></p>
+<div style="position: relative; display: inline-block;">
+  <img src="img/how-1.png" style="width: 500px; height: auto;">
+  <div style="position: absolute; top: 20px; text-align: center; width: 100%;">
+    <p>Матрица судьбы имеет 2 квадрата: личный и родовой.
+</p>
+  </div>
+</div>
+<br>
+<div style="position: relative; display: inline-block;">
+  <img src="img/how-2.png" style="width: 500px; height: auto;">
+  <div style="position: absolute; top: 20px; text-align: center; width: 100%;">
+    <p>На этой линии располагаются цифры, характеризующие физические проявления человека (каким образом он проявлен в физическом мире).
+Сюда можно отнести: действия и поступки, внешность, здоровье, умение заработать деньги. 
+</p>
+  </div>
+</div>
+<br>
+<div style="position: relative; display: inline-block;">
+  <img src="img/how-3.png" style="width: 500px; height: auto;">
+  <div style="position: absolute; top: 20px; text-align: center; width: 100%;">
+    <p>На этой линии располагаются духовные эмоциональные характеристики.
+</p>
+  </div>
+</div>
+<br>
+<div style="position: relative; display: inline-block;">
+  <img src="img/how-4.png" style="width: 500px; height: auto;">
+  <div style="position: absolute; top: 20px; text-align: center; width: 100%;">
+    <p>На этой линии располагаются цифры, отображающие энергию, дающие информацию по роду отца.
+</p>
+  </div>
+</div>
+<br>
+<div style="position: relative; display: inline-block;">
+  <img src="img/how-5.png" style="width: 500px; height: auto;">
+  <div style="position: absolute; top: 20px; text-align: center; width: 100%;">
+    <p>Информация по роду матери.
+</p>
+  </div>
+</div>
+<p><h2 align="left">22 энергии или араканов в матрице (по дню рождения)</h2></p>
+<p align="left">Всего существует 22 энергии. Если вы родились 23-31 числа, тогда цифры складываються. Например: Вы родились 23 числа, значит складываем 2+3=5 – это ваша энергия, ваш аркан, 24 – 2+4=6, 25 – 2+5=7, 26 – 2+6=8, 27 – 2+7=9, 28 – 2+8=10, 29 – 2+9=11, 30 – 3+0=3, 31 – 3+1=4.<br><br>
+<p align="left"><b>1 Энергия. Маг, волшебник, чудотворец.</b>
+  <br>Люди, рождённые под этой энергией, наделены незаурядными
+способностями. И для них важна их личная социальная реализация.
+Этим людям важно найти ту сферу жизни, где они будут иметь
+возможность творить и создавать в жизни что – то уникальное,
+присущее им одним. Это люди новаторы и лидеры, способные зажечь
+своими идеями других людей, повести их за собой.<br>
+От рождения люди 1 энергии чувствительны к энергиям, умеют
+использовать энергетический потенциал Вселенной в своей
+деятельности, будь то дела земные или духовные и творческие. Им
+интересно, как и по каким законам материализуются события в их
+жизни и в жизни других людей.<br>
+Люди 1-го кода судьбы, как правило, оптимистичные и деятельные,
+авантюрны и
+изобретательны, со множеством интересных идей. Они легко
+начинают новые проекты. Всегда стремятся выделиться из толпы.
+Легко и с радостью передают всё то, что умеют, делятся опытом.
+Их сама жизнь поставила на передовую. Им часто приходится
+самостоятельно пробивать дорогу в жизни себе и многим другим. У
+них талант достигать вершин мастерства, по большей части
+самостоятельно. Они могут работать и в одиночку или с равными по
+духу партнёрами, но не терпят авторитарного давления над собой.
+Свобода – это главная составляющая их жизни.<br>
+Путешественники, познаватели в мире всего нового,
+первооткрыватели. Их можно включать в эксперименты, они
+соглашаются на это достаточно легко. Праздник жизни и фейерверк –
+это для них!<br>
+Им гораздо сложнее находиться в ситуации застоя, чем в пучине
+самых разнообразных событий жизни. Вся жизнь – это удивительное
+приключение, которое открывается перед людьми 1 -го кода судьбы,
+если они сумели поверить и открыться чудесному покровительству
+Высших сил в своей судьбе.<br>
+Люди, соприкоснувшиеся с ними, быстрее начинают двигаться к
+своей эволюции. Завоевать душу и сердце чудотворца – это значит
+поручиться покровительством, поддержкой и любовью друга. Таким
+людям присуща магическая сила мысли, сила слова и широта сердца.
+Их энергетика настроена на материализующую способность
+Вселенной! Перед ними открыто множество дорог. И по очень многим
+им придётся в жизни радостно и весело прошагать.<br>
+<u>В плюсе обладатель аркана:</u>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Лидер и новатор</i><br>
+<i>+ Изобретательность</i><br>
+<i>+ Оптимистичен, имеет много интересных идей</i><br>
+<i>+ Общается с теми, кого считает достойными</i><br>
+<i>+ Тонко видит мир</i><br>
+<i>+ Любит роскошь</i><br>
+<i>+ Инициирует других к действиям. Сам действует мало</i><br>
+<i>+ Не нуждается в оценке и похвале</i><br>
+<i>+ Всегда верит в успех</i><br>
+<i>+ Быстрая реализация желаний</i><br>
+<i>+ Авантюрист</i><br>
+<i>+ Свободолюбив</i><br>
+<i>+ Самостоятелен</i><br>
+</p>
+<p align="left">
+<u>В минусе обладатель аркана</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Страдает эгоизмом</i><br>
+<i>– Гордыня</i><br>
+<i>– Комплексы</i><br>
+<i>– Страх начать новое дело</i><br>
+<i>– Не любит и не признаёт конкуренцию</i><br>
+<i>– Не выносит критику</i><br>
+<i>– Бросает всё, едва начав</i><br>
+<i>– Можно поймать на «слабо»</i><br>
+<i>– Почти не имеет друзей</i><br>
+<i>– Считает себя выше всех. Относится к людям со снисхождением</i><br>
+<i>– Не умеет прощать</i><br>
+<i>– Не верит в свои силы</i><br>
+<i>– Безответственен</i><br>
+<i>– Считает, что всегда всё знает</i><br>
+</p></p>
+<p align="left">Урок: выровняться с другими людьми и раскрыть свой потенциал<br><br></p>
+<p align="left"><b>2 Энергия. Единство, равенство, гармония.</b><br>
+Люди, рождённые под энергией 2-го кода судьбы, от рождения
+обладают дипломатическими способностями, умением урегулировать
+конфликты, сглаживать острые углы, гасить негативные всплески
+эмоций, поглощать их своей энергией. Они обладают глубинным
+чувствованием и видением.<br>
+Способны видеть и замечать то, что скрыто и лежит за гранью
+обычного восприятия и понимания. Очень наблюдательны,
+таинственны и загадочны, осторожны далеко не всем показывают своё
+истинное лицо, часто создают видимость, а истину прячут от
+посторонних глаз.<br>
+Их энергия текучая и обволакивающая, как загадочная дымка утром
+на рассвете над рекой, как туман, стелящийся над просторами Земли,
+как облако, ложащееся на вершины гор. Я есть, и меня нет. Я яркая, и я
+незаметная. Я пленяющая, и я неуловимая. Я солнечная и лунная
+одновременно. Я сама противоположность Вселенной и её единство.
+Единство и борьба противоположностей разлиты в энергиях 2-го
+кода судьбы. Это переход из одного состояния в другое. Люди 2-го кода
+текучие и противоречивые, но очень тонко чувствующие всё вокруг,
+понимающие чужую боль и стремящиеся помочь и исцелить.
+Они обладают способностями уговорить, успокоить, снять боль, от
+природы целители и дипломаты, их притягивает всё необычное и
+загадочное.<br>
+Эти люди читают чужие души, как книгу Бытия. Их советы и
+изрекаемая мудрость помогают многим. Они не рвутся на лидерские
+позиции, оставляя, чаще всего, за собой нейтралитет. Любят, оставаясь
+в тени, управлять ситуацией исподволь, аккуратно разворачивая
+события по своему замыслу. Могут отойти в сторону, оставив поле
+битвы или споров. Суета не для них. Их личное медитативное
+состояние им дорого, и они его ценят и берегут. Редко кого впускают
+близко в своё личное пространство. Людей воспринимают на позициях
+равенства. Любят и понимают природу и животный мир.<br>
+<u>В плюсе обладатель аркана:</u></p></p>
+
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Дипломатичен, способен урегулировать и сгладить любой
+конфликт</i><br>
+<i>+ Обладает сильной интуицией</i><br>
+<i>+ Понимает суть происходящего, глубоко чувствует</i><br>
+<i>+ Общителен, имеет много друзей, не любит одиночество</i><br>
+<i>+ Не лидер, скорее «серый кардинал»</i><br>
+<i>+ Любит читать и познавать всё новое</i><br>
+<i>+ Охотно слушает, а потом выдаёт накопленную информацию
+дозировано</i><br>
+<i>+ Наблюдательный</i><br>
+<i>+ Любит проводить время на природе</i><br>
+</p>
+<p align="left">
+<u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Склонен к сплетням, может рассорить между собой окружающих.
+Всё делает за спиной</i><br>
+<i>– Озлоблен на весь мир</i><br>
+<i>– Сложно понять, что у него на душе.</i><br>
+<i>– Противоречивая и двойственная натура</i><br>
+<i>– Ленив, пассивен и нерешителен</i><br>
+<i>– Имеет много поверхностных связей</i><br>
+<i>– Скрытен</i><br>
+<i>– Подвержен влиянию или рекламе</i><br>
+<i>– Имеет проблемы, связанные с бесплодием</i><br>
+</p>
+<p align="left">
+Урок: преодолеть свою пассивность, больше действовать. Быть
+более открытыми, говорить, что они думают. Научиться пребывать в
+гармонии через принятие в себе, как хорошего, так и плохого.</p><br>
+<p align="left"><b>3 Энергия. Императрица, хозяйка.</b><br>
+Люди, рожденные с этой энергией, олицетворяют земное
+материальное плодородие, земные блага. Дом, семья, дети, положение,
+статус в социуме являются для них очень важным. Они стремятся в
+жизни занять лидирующие позиции. Хорошие управленцы и
+организаторы.<br>
+3-я энергия судьбы, плодородия – это энергия авторитетов. Как
+правило, сам человек стремится стать авторитетом для окружающих,
+быстро оказывается в центре внимания, знает и понимает, как увлечь
+за собой. Материальное благополучие и успех, положение в социуме
+является для таких людей критерием реализованности.<br>
+Их предназначение и цель в жизни – созидание материального плана
+на Земле в любых сферах Мира Материи, чтобы жизнь стала богаче и
+плодороднее во всех ее земных проявлениях, обеспечение людей
+достойным материальным достатком и уровнем жизни.
+Их задача – научить людей планеты любить Землю, любить земные
+блага, быть процветающим и успешным и с благодарностью
+относиться к Матушке Земле и ко всему тому, что она дает.<br>
+<b><i>Женщины 3 кода.</i></b><br>
+Женщины наделены необыкновенной женственностью и
+ощущением «королевы»,
+«императрицы». Этот код судьбы созвучен иньской, женской
+энергии. Они любят окружать себя красивыми вещами, ценят вкус в
+еде, одежде, разбираются в моде. Их дом являет собой признак и
+степень их успеха. Так что, машина и дом должны быть в полном
+порядке и соответствовать статусу богатого, успешного человека.
+Поэтому, порядку и уюту жилища люди третьего кода уделяют особое
+внимание. Если они будут выбирать отдых, то выберут его в
+комфортабельном пятизвёздочном отеле. А если девушка будет
+выбирать жениха, то отдаст предпочтение обеспеченному, уже
+имеющему положение в социуме или подающему большие надежды,
+перспективному человеку.<br>
+Люди третьего кода судьбы наделены природной любовью к себе и
+умением заботиться и ухаживать за своим телом, так же как за домом и
+за детьми. Умеют хорошо вести домашнее хозяйство, рационально
+распоряжаться деньгами. Ответственны‚ обязательны, контролируют
+всех своих близких, часто пытаются за них решать встающие перед
+ними задачи.<br>
+Бог наделяет таких женщин с энергией 3-го кода внешней красотой,
+притягательностью и женственностью. Они умеют зарабатывать
+деньги, деньги идут, притягиваются к ним. Им удаётся собственный
+бизнес. Они хорошо себя ощущают там, где крутятся большие деньги.
+В своих лучших проявлениях им присущи широта, доброта и
+щедрость. Они отзывчивы на помощь.<br>
+<u>В плюсе обладательница аркана:</u>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Истинная женщина, красива, статна, всегда следит за собой</i><br>
+<i>+ Настоящая хозяйка. Способна возглавить любое дело</i><br>
+<i>+ Нежная и заботливая</i><br>
+<i>+ Поддерживает порядок во всём</i><br>
+<i>+ Живёт здесь и сейчас</i><br>
+<i>+ Заботиться об окружающих, детях, животных, домашних
+растениях</i><br>
+<i>+ Нетороплива, имеет завораживающие жесты</i><br>
+<i>+ У неё всегда всего достаточно. Сама Вселенная заботится о ней</i><br>
+<i>+ Руководит с материнской любовью, поддерживает</i><br></p>
+<p align="left">
+<u>В минусе обладательница аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Малоэмоциональна и эмансипирована</i><br>
+<i>– Контролирует всё вокруг</i><br>
+<i>– Подавляет мужчин, в ней самой доминируют мужские энергии</i><br>
+<i>– Одинока и не романтична</i><br>
+<i>– Не способна на компромиссы, нетерпелива, не умеет прощать</i><br>
+<i>– Зациклена на деньгах</i><br>
+<i>– Выглядит неопрятно, не следит за собой</i><br>
+<i>– Имеет страх, что ресурсы могут закончиться</i><br>
+<i>– Имеет проблемы с женскими органами</i><br>
+<i>– Имеет перегибы в воспитании ребёнка. Мамы или слишком много,
+или она отдаёт ребёнка на воспитание бабушке</i><br>
+<i>– В доме отсутствуют цветы и домашние животные</i><br>
+<p align="left"><b><i>Мужчины 3 кода.</i></b><br>
+Мужчинам, имеющим аркан «тройки», комфортно и уютно в
+женском обществе. Они окружают себя женским вниманием, любят
+часто заниматься хозяйством и бытовыми делами, контролировать и
+давать «ценные» указания женщинам, как им следует поступать и чем
+заняться. Разбираются во многих женских вопросах и чувствуют
+женщин лучше других мужчин.<br>
+Спрашивайте такого мужчину: «А чего хочет женщина?» И он,
+скорее всего, ответит на этот вопрос! В жизни таких мужчин всегда
+находятся женшины -покровительницы. И у них сохраняется в течение
+всей жизни связь с матерью. Они прислушиваются к ее советам, а
+иногда бывают полностью ведомы ею.<br>
+В роли матери может выступать и жена. Тогда таким мужчинам
+следует осознанно развивать в себе мужественность, стремиться к
+занятию активной жизненной позиции, учиться брать ответственность
+на себя и уметь принимать решения, быть авторитетом в семье и для
+близких. Рождаются дочки.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Даёт своему окружению состояние ресурсности и безопасности</i><br>
+<i>+ Творческий, чувственный и эмоциональный</i><br>
+<i>+ Прекрасно понимает женскую природу, умеет делать комплименты
+и не стесняется их делать</i><br>
+<i>+ Отлично ладит с детьми</i><br>
+<i>+ Способен вести домашнее хозяйство</i><br>
+<i>+ Заботится о природе и животных</i><br>
+<i>+ Прекрасно разбирается в моде</i><br>
+<i>+ Очень часто в его жизни может присутствовать женщина-
+покровительница</i><br></p>
+<p align="left">
+<u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Не способен брать на себя ответственность и принимать решения,
+боится рисковать</i><br>
+<i>– Чересчур эмоционален</i><br>
+<i>– Излишне заботится о своей внешней красоте</i><br>
+<i>– Имеет проблемы с мамой и с верой в себя</i><br>
+<i>– Неряшлив</i><br>
+<i>– Защищается мышцами от мира или же идёт в профессиональный спорт или на военную службу</i><br>
+<i>– Не понимает и критикует женщин</i><br>
+</p>
+<p align="left">Урок: для женщины – с любовью воспринимать мир и людей. Для
+мужчин – работать над мужской энергией</p><br>
+<p align="left"><b>4 Энергия. Император, хозяин.</b><br>
+4-й код – главенствующий принцип правления и власти на Земле.
+Мужская яньская энергия, энергия огня, которая сама по себе является
+мощной всепоглощающей и действенной. Это энергия принятия
+решений и возложения на себя ответственности, умение отвечать не
+только за себя, но и за многих. Кому дана энергия власти по судьбе,
+тому открыты большие возможности и горизонты по дороге
+восхождения в социуме.<br>
+Люди 4-го кода наделены работоспособностью, ответственностью,
+стремлением во всём себя упорядочить и подчинить своему влиянию.
+Они умеют выстроить людей, дать задания, спросить с них результат.
+Обладают природными хозяйскими и организаторскими
+способностями.<br>
+Испытывают интерес к политической и государственной структуре
+власти, и, как следствие, часто причастны к ним. Человека как будто
+сама жизнь выдвигает на передовую, вручая все механизмы правления
+в руки и не важно, мелкие это предприятия и государственные
+структуры или крупные.<br>
+Человек числа четыре везде склонен навести свой порядок,
+проконтролировать процессы в любом деле. Про него говорят:
+«Руководитель от Бога!»<br>
+Энергия 4-го кода устойчива и непоколебима. Если человек принял
+решение, то он намерен идти до конца, постоянно и уверенно двигаясь
+вперёд. Блестящая логика помогает ему прийти ему к цели. Всё
+структурировано в его голове, всё разложено по полочкам. Надёжность
+и сильное плечо, которое он готов подставить в трудную минуту,
+отличает людей 4-го кода.<br>
+Сила воина, мужская сила, решительность, умение принять важные
+решения, найти выход из сложных ситуаций, вера в успех, отсутствие
+суеты и паники – всё это характеризует с наилучших позиций
+признания 4 – й код судьбы.<br>
+<b><i>Мужчины 4 энергии.</i></b><br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Ответственен, работоспособен и уверен в себе, даёт своим
+близким чувство защищенности и безопасности</i><br>
+<i>+ Способен обеспечить свою семью</i><br>
+<i>+ Хороший и заботливый отец</i><br>
+<i>+ Сам формирует события</i><br>
+<i>+ Не склонен к ярким проявлениям эмоций</i><br>
+<i>+ Является авторитетом, с лёгкостью руководит, занимает высокие
+должности или имеет собственный бизнес</i><br>
+<i>+ Имеет прекрасные организаторские способности</i><br>
+<i>+ Руководит и наказывает справедливо</i><br>
+<i>+ Имеет крепкий внутренний стержень</i><br>
+<i>+ В его делах всегда порядок</i><br>
+</p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Деспотичен, стремится всё контролировать</i><br>
+<i>– Идёт к власти любой ценой</i><br>
+<i>– Жесток, может быть тираном в семье и на работе</i><br>
+<i>– Прагматичен</i><br>
+<i>– Излишне консервативен, не умеет выражать свои эмоции</i><br>
+<i>– Реже, но может быть безответственным, инфантильным и
+зависимым от чужого мнения.</i><br>
+<i>– Может даже заболеть ради того, чтобы избежать ответственности</i><br>
+<i>– Слабее своего отца, не смог стать новой веткой своего рода</i><br>
+<i>– Склонен к изменам</i><br>
+<p align="left"><b><i>Женщины 4 энергии.</i></b><br>
+<u>В плюсе обладательница аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Умеет контролировать свои эмоции, стремится быть женственной</i><br>
+<i>+ Прекрасный администратор, умеет всё планировать</i><br>
+<i>+ Отлично ведёт переговоры</i><br>
+<i>+ Способна приумножить все полученные ей ресурсы</i><br>
+<i>+ Всегда имеет финансовые резервы, склонна к инвестированию</i><br>
+<i>+ Руководит справедливо и милосердно</i><br>
+<i>+ Умеет признавать и исправлять свои ошибки</i><br>
+<i>+ Защищает отца от деструктивных материнских программ</i><br>
+</p>
+<p align="left"><u>В минусе обладательница аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Не женственна, властная и жёсткая мама</i><br>
+<i>– Абсолютно всё хочет держать под своим контролем</i><br>
+<i>– Постоянно критикует домашних, любовь заменяет подарками</i><br>
+<i>– Не уважает мужчин и вышестоящее руководство</i><br>
+<i>– Стремится к одиночеству, закрывает свою душу</i><br>
+<i>– Все силы направляет на то, чтобы обеспечить своим детям
+безбедное будущее</i><br>
+</p>
+<p align="left">Урок: для мужчин –быть императором, настоящим мужчиной, но без
+давления. Научиться работать с миром материи. Для женщин – быть
+мягче, научиться доверять партнерам, признавать их первенство,
+проработать в себе женские энергии</p><br>
+<p align="left"><b>5 Энергия. Учитель, ученик, закон.</b><br>
+Все, что касается законности, порядка, разнообразных правил,
+традиций созвучно 5-му коду судьбы. Люди, рождённые с числом 5,
+стараются жить, соблюдая правила и традиции: традиции семьи,
+законы общества и религии. Для них важно всё, что установлено
+авторитетами или ими самими.<br>
+Они ищут в жизни знания, которые подтверждены научными
+исследованиями, что доказывает правильность и спокойствие их
+выбора. Им сложно пуститься в авантюрные предприятия, им этого не
+позволят их принципы. Большую роль в их жизни играет семья,
+воспитание детей. Они вообще любят учить, объяснять, воспитывать,
+так как природа наделила их талантом учительства, талантом
+красноречия и убеждения. Они любят убеждать людей в своей правоте,
+искренне считают, что их мнение и суждение однозначно верно и что
+не бывает других путей и решений.<br>
+Люди 5-го кода судьбы прекрасные ораторы, публичные
+выступления им даются легко, и они легко учатся ораторскому
+искусству. Говорить на аудиторию – это их стезя. Им интересны
+научные подходы к любому делу. Они все стараются логически
+продумать и рассчитать, увидеть и убедить других в том, что они
+правы. Они всю жизнь любят учиться, обретать знания, быть в
+коллективе, занимать позиции лидера и руководителя. Научившись
+чему-то, они с удовольствием делятся этими знаниями с другими. Им
+важно донести до людей свои мысли и убеждения.
+Люди с энергией 5-го кода часто выбирают профессии, связанные с
+законом или порядком, или отдают предпочтение учительской или
+научной деятельности.<br>
+Надёжные, ответственные, любящие порядок, умеющие руководить
+или управлять, а также наделённые талантом красноречия,
+учительства, люди 5-го кода живут по своим чётким убеждениям и
+принципам, часто загоняя себя в рамки своего же логического
+мышления и видения.<br>
+Иногда не успевают менять свои взгляды за переменчивостью и
+изменениям жизни, так как их устоявшиеся принципы тормозят их,
+создавая преграды и рамки, узость видения. Им очень важно
+пересматривать свои взгляды и работать над расширением сознания.
+Уметь принимать мир и жизнь в их многообразии, принимать разные
+точки зрения и позиции, чаще устраивать эксперименты, обновляющие
+жизнь.<br>
+Им необходимо научиться доверять покровительству Вселенной.
+Они всегда преданы и защищают всех тех, кого любят, о ком заботятся
+и кому помогают. Являются авторитетом для окружающих.
+Самостоятельны и деятельны.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Обладает талантом учителя. Всю жизнь учится и с радостью
+передаёт свои знания дальше</i><br>
+<i>+ Поддерживает порядок во всём – в делах, бумагах, вещах, на
+рабочем столе</i><br>
+<i>+ Прекрасный оратор, легко убеждает в своей правоте, имеет
+логическое мышление</i><br>
+<i>+ Ответственный, надёжный, всесторонне развит</i><br>
+<i>+ Принимает всё и не разделяет мир на добро и зло</i><br>
+<i>+ Главный эгрегор для него – семья</i><br>
+<i>+ Большое значение придаёт семейным традициям и устоям, любит
+семейные застолья</i><br>
+<i>+ Всю жизнь находится в поиске своего духовного наставника</i><br>
+<i>+ Разборчив в отношениях</i><br>
+</p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Не хочет учиться или же имеет перегибы с обучением</i><br>
+<i>– Не хочет становиться учителем и передавать полученные знания</i><br>
+<i>– Поучает и навязывает свои идеи</i><br>
+<i>– Имеет беспорядок в делах, бумагах, вещах, на рабочем столе</i><br>
+<i>– Опаздывает</i><br>
+<i>– Бунтует и стремится управлять людьми через их слабости</i><br>
+<i>– Уверен в своей исключительности и страдает гордыней</i><br>
+<i>– Имеет проблемы с созданием и удержанием семьи</i><br>
+<i>– Имеет проблемы с законом</i><br>
+<i>– Религиозный фанатик</i><br>
+</p>
+<p align="left">Урок: важно уважать мнение других людей и воспринимать другие
+учения.</p><br>
+<p align="left"><b>6 Энергия. Любовь, отношения, выбор,
+коммуникации.</b><br>
+Это энергия общения, коммуникаций и чувственности. Люди с
+энергией 6 легко общаются, сходятся с людьми, у них множество
+друзей и знакомых, они милые и приятные, обходительные. Стремятся
+завоевать расположение к себе, урегулировать конфликты и сгладить
+острые углы.<br>
+Их привлекает всё яркое, красивое изящное, они ценители
+искусства, красоты, обладают превосходным, утончённым вкусом.
+Часто являются гурманами в еде, ценителями всего красивого и
+прекрасного. Любовь для них является неотъемлемой частью жизни.
+Им важно любить всё то, чем они занимаются, всё то, на что
+направлено их внимание.<br>
+Стараются окружить себя красивыми вещами, приятными людьми,
+престижной работой. Отдают особое внимание внешним формам, и
+поэтому у них прекрасный вкус. Они законодатели моды во всём. Им
+свойственно видеть красоту во всём, и они стремятся сами
+соответствовать своим принципам и ощущениям: ухаживают за собой,
+за своей внешностью, тщательно подбирают одежду.<br>
+Ребёнка с энергией 6 вы никогда не отправите гулять в том, что он
+не хочет одевать или в том, что ему не нравиться, он может закатить
+вам истерику, но не пойдет «некрасивым» к людям.<br>
+Для таких людей очень важно мнение окружающих, что о них
+скажут, что подумают, как они будут выглядеть в глазах других людей,
+какое произведут впечатление. Они артистичны по своей природе,
+любят получать от жизни удовольствия, нежиться в энергии обожания
+и любви. Где бы они не находились, легко притягивают к себе
+внимание, легко становятся душой любой компании.<br>
+Они эмоциональны и влюбчивы, им нравится производить
+впечатление на других людей. Они погружаются в отношения всецело
+с головой, ярко переживая все связанные с этим эмоции. В их доме, как
+правило, царит уютная и красивая атмосфера, любят принимать
+гостей, радушные хозяева. Так же с удовольствием участвуют в любых
+празднествах и вечеринках.<br>
+Все удовольствия мира форм, телесные удовольствия для них. Они
+умеют создавать вокруг себя праздник и поэтому редко бывают одни.
+Одиночество не для них. Атмосфера фейерверка, праздника, красоты и
+общения – вот что отличает людей 6-го кода судьбы. И поэтому им
+становится грустно и скучно, когда этого долго нет в их жизни. Им
+обязательно нужно черпать эти энергии во внешнем мире, ну и
+конечно же научиться создавать их внутри себя самого!<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Общительный, бесконфликтный, умеет расположить к себе</i><br>
+<i>+ Легко сходится с людьми и имеет много друзей</i><br>
+<i>+ Любит всё красивое, имеет хороший вкус, является законодателем
+моды</i><br>
+<i>+ Стремится к созданию в своём доме уюта и красоты. Любит
+детали в интерьере. С
+удовольствием приглашает гостей</i><br>
+<i>+ Умеет любить и не боится открывать своё сердце</i><br>
+<i>+ Любит телесные удовольствия</i><br>
+<i>+ Умеет делать правильный выбор и уважает его</i><br>
+<i>+ Понимает, что в человеке важна не только внешность, но и его
+внутренний мир</i><br>
+</p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Ранимый, депрессивный, склонен к одиночеству и живёт с
+«закрытым сердцем»</i><br>
+<i>– Не умеет общаться, любить, не имеет или теряет друзей</i><br>
+<i>– Мстительный и обидчивый</i><br>
+<i>– Ставит на первое место деньги, а не отношения; внешность, а не
+внутренний мир</i><br>
+<i>– Зациклен на своей внешности, шопоголик, которому важны только
+бренды</i><br>
+<i>– Зависим от мнения окружающих</i><br>
+<i>– Не умеет делать выбор. А если сделал его, то сомневается в его
+правильности</i><br>
+<i>– Оговаривает бывших партнёров, портит отношения с бывшими
+коллегами</i><br>
+<i>– Не умеет жить здесь и сейчас</i><br>
+</p>
+<p align="left">Урок: принять себя и мир в целостности. Безусловная любовь.</p><br>
+<p align="left"><b>7 Энергия. Воин, победитель, движение вперед.</b><br>
+Люди 7-го кода – это личности с явной лидирующей позицией, с
+энергией воина, который стремится к победе и достижению
+поставленной цели. Они самостоятельные и решают вопросы своей
+жизни сами. Именно они управляют колесницей своей судьбы. Для
+них важно понимать и знать конечную цель, они нацелены на
+результат.<br>
+Составление бизнес – планов на ближайшее будущее очень помогает
+людям 7-го кода, таким образом им проще сконцентрироваться и
+направить свою энергию в нужном направлении, чтобы избежать
+бесполезных действий.<br>
+Движение – это основной принцип этих людей. Они, как правило,
+хорошо водят любые виды транспорта, любят путешествовать, легки
+на подъём, оптимистичны, с активной жизненной позицией. Но иногда
+бывают воинственно настроены, если начинают делить мир на добро и
+зло, на чёрное и белое и отказываются понимать законы мироздания.
+Отсутствие действий и движения приводят к застою в их жизни и
+физическом теле, поэтому им необходимо тренировать не только дух,
+но и тело. Укреплять костную систему и сохранять гибкость суставов.
+Такие люди часто бывают трудоголиками, поэтому им надо учиться
+практике релаксации и медитации, сменять активность на пассивность,
+уметь расслаблять ум и физическое тело. Занятия фитнесом,
+физкультурой, активными видами отдыха – для них.<br>
+Они умеют зажечь своими идеями других людей, повести их за
+собой, стать примером для подражания, так как они активные и
+деятельные. Для них очень важна их собственная реализация.<br>
+Бесцельная жизнь не для них. Такие люди упорны, настойчивы, могут
+начинать задуманное снова и снова, даже после неудачи, каждый раз
+надеясь на позитивный итог, на то, что цель будет достигнута. Они
+решительны, долго не сомневаются, если задумали, то действуют.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Яркий лидер и карьерист, который ставит цель и планомерно идёт
+к ней. Цель выбирает
+высокодуховную, ту, которая несёт не только материальную выгоду,
+но и помощь людям</i><br>
+<i>+ Верен своей цели и идее</i><br>
+<i>+ Умеет руководить и делегировать полномочия.</i><br>
+<i>+ Доверяет коллективу</i><br>
+<i>+ Настойчив, нацелен на результат и победу. При этом умеет
+радоваться промежуточным, пусть даже небольшим, результатам</i><br>
+<i>+ Лёгок на подъём, имеет активную жизненную позицию</i><br>
+<i>+ Любит активный отдых и путешествия</i><br>
+<i>+ Отдыхает за рулём автомобиля</i><br>
+<i>+ Совершает в юности ошибки, но принимает их и не корит себя</i><br>
+<i>+ Стремится дать своим детям счастливое, обеспеченное детство</i><br></p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Ленив, в его жизни отсутствует движение</i><br>
+<i>– Безответственен, не умеет доводить дела до конца</i><br>
+<i>– Не доверяет коллективу, стремится всё сделать сам. Или же
+излишне контролирует работу
+подчинённых</i><br>
+<i>– Не умеет идти к цели планомерно, импульсивен</i><br>
+<i>– Агрессивен, контролирует всё и всех вокруг, идёт к своей цели «по
+головам»</i><br>
+<i>– Зациклен на деньгах и ставит перед собой только материальные
+цели</i><br>
+<i>– Не умеет радоваться результатам</i><br>
+<i>– Подвержен чужому влиянию через «слабо»</i><br>
+<i>– Имеет заниженную самооценку</i><br>
+<i>– Пытается повлиять на другого человека и навязать ему свою цель</i><br>
+<i>– Теряет авторитет</i><br></p>
+<p align="left">Урок: все время двигаться, ставить цели.</p><br>
+<p align="left"><b>8 Энергия. Справедливость.</b><br>
+Если перевернуть 8, то она будет обозначать бесконечность. Корни
+8-го кода судьбы уходят далеко в прошлое, а, следовательно, люди 8-го
+кода связаны незримыми энергетическими нитями с кармой прошлых
+воплощений. Именно им дано глубже и тоньше видеть, чувствовать и
+понимать кармический закон справедливости.<br>
+То, что мы видим, когда событие происходит, это следствие ранее
+переживаемых нами эмоций, мыслей, действий. То, что мы имеем в
+реальности, пришло к нам не случайно, и поэтому с нами никогда и
+ничего не происходит просто так, всё это причинно-следственный
+закон бытия. И именно людям 8-го кода судьбы проще понять этот
+закон, разглядеть его в событиях своей жизни, а в последствие
+научиться видеть его и в жизнях других людей.<br>
+Людям 8-го кода судьбы следует задавать себе вопросы:<br>
+– А почему со мной это происходит?<br>
+– В чём истинная причина тех или иных проблем?<br>
+– И что я могу сделать сегодня, чтобы изменилась моя жизнь в
+будущем?<br>
+Им дано всё время работать над улучшением своей кармы. Они
+интересуются различными методами улучшения судьбы, посещают
+различные тренинги и семинары. В своей обычной жизни очень
+ответственны, стремятся поступать, стремятся поступать всегда
+справедливо, требуют справедливости и от других людей, поэтому
+иногда вспыльчивы и ранимы. Влезают во все разбирательства и
+отстаивают позиции слабых.<br>
+Они открыты, дружелюбны, бесстрашны, способные быстро
+реагировать в сложных ситуациях. В экстремальных условиях
+действуют решительно. На них можно положиться и доверить
+ответственную работу. Часто находят своё применение в
+законодательных структурах и в структурах правопорядка, контроля и
+налоговых служб.<br>
+Им важно понимать истинный кармический закон, чтобы не
+реагировать так бурно на проявление его следствий в повседневной
+жизни. Им необходимо стараться не вмешиваться туда, где этого не
+требуется.<br>
+Изучая законы мироздания, люди 8-го кода смогут внести ясность в
+любую, даже сложную ситуацию. Смогут помочь, так как они всегда
+ориентированы на помощь и поддержку. Научиться распознать истину
+– в этом их главная кармическая задача.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Тонко чувствует мир и его причинно-следственные законы.
+Понимает, что всё не просто так, а для чего-то. Видит причину всего
+происходящего в себе</i><br>
+<i>+ Доверяет судьбе</i><br>
+<i>+ Имеет хорошее образование и является руководителем
+предприятия</i><br>
+<i>+ Честен с собой и с людьми, не нарушает законы</i><br>
+<i>+ Принадлежит системе или носит погоны</i><br>
+<i>+ Является прекрасным координатором пространства</i><br>
+<i>+ Способен рассудить и сгладить любой конфликт</i><br>
+<i>+ Сумел освободиться от негативных родительских установок</i><br>
+<i>+ Любит развлечения, праздники и роскошь</i><br>
+</p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Обидчив, склонен осуждать других, депрессивен</i><br>
+<i>– Имеет тяжёлую карму и проблемы с оценкой реальности</i><br>
+<i>– Лжёт и манипулирует</i><br>
+<i>– Живёт двойными стандартами</i><br>
+<i>– Разделяет пространства дом и работа. На работе не знают правду о
+доме, а дома о работе</i><br>
+<i>– Любит рисоваться перед людьми</i><br>
+<i>– Склонен к зависимостям</i><br>
+<i>– Зацеплен за честность и пытается бороться за правду с помощью
+закона</i><br>
+<i>– Мстителен</i><br>
+<i>– Не верит в свою значимость</i><br>
+<i>– Не учится на чужом опыте</i><br>
+</p>
+<p align="left">Урок: изучить кармический закон бытия и понять причинно-
+следственную связь.</p><br>
+<p align="left"><b>9 Энергия. Мудрец, отшельник.</b><br>
+Люди с 9 кодом судьбы самодостаточны и наделены природной
+мудростью. К ним всегда все тянутся за советом, к ним
+прислушиваются. Их мнение весомо. Такие люди не любят шумных
+компаний. У них философский взгляд на жизнь. Они любят углубиться
+во всё то, что изучают. Неспешны и несуетливы.<br>
+Им хорошо наедине с собой и никогда не бывает скучно.
+Самодостаточность их главная черта. Любят читать, изучать что-то
+новое. Им лучше, чем другим, даётся научная
+деятельность – это первые люди в научных изысканиях.<br>
+Свои деньги зарабатывают головой, интеллектом, а не руками. Часто
+бывают не приспособлены к физической работе.<br>
+Всегда отзывчивы к боли других, умеют выслушать и правильно
+направить человека на выход из трудной ситуации. Тем самым они
+помогают уже запустить процессы исцеления в человеке. Часто люди
+просто проговаривая свои проблемы мудрецу уже начинают решать
+свои проблемы.<br>
+Еще одной отличительной чертой для таких людей является их
+умение давать правильные советы. Но советы они дают не в форме:"
+Иди туда и сделай это". А скорее в виде притчи, рассказов или из
+своего богатого жизненного опыта. И пока они рассказывают, у других
+людей начинают, своего рода, складываться "пазлы" в голове, и они
+исцеляются. Поэтому из людей 9-го кода судьбы получаются отличные
+лекари души и тела.<br>
+Они очень основательно подходят к выбору партнёра. И если
+влюбляются, то, как правило, остаются ему верны надолго. Глубина их
+чувств и души скрыта от внешних проявлений, поэтому они кажутся
+сухими и сдержанными в чувствах, но это не так. Они нежные,
+заботливые и участливые, просто не всем они могут открыть свою
+душу. Любят находиться в уединении, подумать, и именно в уединении
+к мудрецу приходят самые сокровенные мысли и озарения.
+В одиночестве такие люди отдыхают и восстанавливают
+потраченный энергетический потенциал. Они подключаются к
+мудрости Вселенной и получают дополнительные знания в виде
+вспышек озарения или осознания. Они видят мир намного глубже и
+шире, чем другие. И не следует обижаться на них за их одиночество,
+они сами «выйдут к людям», когда будут готовы. Завоевать сердце и
+дружбу мудреца – это получить надёжного друга, готового помочь в
+любых испытаниях.<br>
+Люди 9-го кода не стремятся к лидерству, но ответственно подходят
+к возложенным на них обязанностям. Не любят над собой
+авторитарных начальников, могут работать в одиночку, независимо ни
+от кого, а также вести свой бизнес.<br>
+Они скрупулёзны и внимательны в любых вопросах. Быстро
+жениться и выходить замуж они не стремятся. Сначала хотят встать на
+ноги, укрепиться материально, выучиться. Среди таких людей чаще
+всего встречаются поздние браки.<br>
+Они любят природу, животных, с удовольствием гуляют со своими
+домашними питомцами. Выходы на природу так же дают им энергию.
+Люди 9-го кода судьбы универсальные в любом роде деятельности.
+Их мудрость и блестящий ум помогают им постичь любые, даже
+самые сложные для многих других задачи. Они хорошо учатся, любят
+учиться всю жизнь, а также успешно обучают других людей.
+Среди них встречаются и отшельники, люди ушедшие в монастырь
+от суеты и обыденности Мира Материи. Они могут вести аскетичный
+образ жизни, отказываться от телесных и материальных удовольствий.
+Или долго и спокойно обходиться без них.<br>
+<u>В плюсе обладатель энергии:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Обладает мудростью, к его советам прислушиваются окружающие</i><br>
+<i>+ Стремится к гармонии и не любит суету</i><br>
+<i>+ Старается вникнуть в суть проблемы, глубоко чувствует, но
+показывает свои чувства только избранным</i><br>
+<i>+ Глубоко изучает информацию, а после передаёт свои знания
+людям</i><br>
+<i>+ В меру аскетичен, ему мало надо</i><br>
+<i>+ Способен пересмотреть опыт прошлого с новым результатом. Не
+обесценивает прошлое</i><br>
+<i>+ При столкновении с негативным опытом прерывает его и находит
+новую работу или новые отношения</i><br>
+<i>+ Поздно вступает в брак. Его выбор основателен</i><br>
+<i>+ Хороший, верный друг</i><br>
+<i>+ Любит одиночество</i><br></p>
+<p align="left">В минусе обладатель аркана:</p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– 3амкнут, чрезмерно аскетичен, стремится уйти от мира</i><br>
+<i>– Не любит себя и весь мир вокруг</i><br>
+<i>– Не заботится о своём здоровье</i><br>
+<i>– Осуждает людей из-за своей гордыни и самодовольства</i><br>
+<i>– Ревнив и боится одиночества. Это может привести к
+неразборчивым связям. Придирчив
+по отношению к своему партнёру</i><br>
+<i>– Транжирит деньги</i><br>
+<i>– Не принимает свою «нестандартную», по его мнению, маму</i><br>
+<i>– Забывает и обесценивает прошлое</i><br></p>
+<p align="left">Урок: проработать свои обиды, научиться доверять, выходить в мир,
+открываться всей душой людям.</p><br>
+<p align="left"><b>10 Энергия. Фортуна, удача.</b><br>
+Люди 10-го кода судьбы считаются счастливчиками, баловнями
+судьбы. Они рождены под счастливой звездой, и от рождения к ним
+приставлены покровители свыше – Ангелы-хранители. Они всю жизнь
+чувствуют, что их оберегает сама Фортуна и выводит из любых, даже
+очень слитых жизненных ситуаций. Они как будто бы находятся в
+потоке самой судьбы.<br>
+Им только следует принять решение и всё вокруг их завертится:
+открываются счастливые двери, встречаются нужные люди именно в
+тот момент, когда это очень важно. Попадается на глаза информация,
+которая приведёт к благоприятному результату и т.д.<br>
+Как будто бы сама Вселенная разговаривает с этими людьми.<br>
+Постоянно подает им знаки о своём присутствии, и поэтому людям 10-
+го кода многое дается легко. Если они сами не склонны усложнять себе
+жизнь и запутывать колесо своей Фортуны, пытаясь раскрутить его в
+обратную сторону или новее плыть против потока.<br>
+Когда человек плывёт против потока, он теряет много энергии.
+Жизнь перестает открываться перед ним и поэтому для 10 аркана
+необходимо научиться чувствовать свой поток и сознательно его
+выбирать. Только с развитой интуицией и расширенным сознанием
+возможно чувствовать свое предназначение и видеть знаки на пути.
+Жизнь всегда разговаривает с ними через знаки.<br>
+Люди с энергией потока не стремятся занимать в жизни
+лидирующие позиции. Они прекрасно работают в коллективе, так как
+их энергия помогает более легко продвигаться любым проектам и
+предприятиям. Такие люди компанейские, лёгкие на подъем, с
+удовольствием поддерживают разнообразные мероприятия. Они
+авантюрны, поддаются влиянию.<br>
+Им нужно научиться лёгкости восприятии жизни, приобрести
+позитивный взгляд на мир и крепкий внутренний духовный стержень,
+и тогда их судьбоносный поток всегда будет течь в благоприятном
+направлении, к выполнению своего Божественного предназначения.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Счастливчик, которому помогают Высшие силы</i><br>
+<i>+ Живёт в потоке и умеет видеть знаки, доверяет Богу, расслаблен,
+живёт и не напрягается</i><br>
+<i>+ Является талисманом для других</i><br>
+<i>+ Не работает по жёсткому графику</i><br>
+<i>+ Компанейский и общительный</i><br>
+<i>+ Не лидер</i><br>
+<i>+ Принимает цикличность в своей жизни. На подъёме щедр, и
+занимается благотворительностью</i><br></p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Живёт трудно, ежедневно преодолевает массу различных
+препятствий. Каждый день, как «день сурка»</i><br>
+<i>– Ленив, пассивен, всё время откладывает дела на потом</i><br>
+<i>– Не имеет целей, не желает развиваться (в том числе духовно)</i><br>
+<i>– Может попасть под влияние других людей</i><br>
+<i>– Имеет пагубные привычки и прожигает свою жизнь</i><br>
+<i>– Несамостоятелен. Всё время ждёт поддержки со стороны</i><br>
+<i>– В отсутствии партнёра нервничает и начинает судорожно его
+искать. Тренинги, свахи – пробует всё</i><br>
+<i>– Не имеет друзей</i><br>
+<i>– Шопоголик</i><br></p>
+<p align="left">Урок: научиться расслабляться, чувствовать свои потоки, развивать
+интуицию, заниматься духовными практиками. Заниматься любимым
+делом.</p><br>
+<p align="left"><b>11 Энергия. Сила, потенциал.</b><br>
+Сила для людей 11 кода является проявлением их
+индивидуальности. Ведь мир ими воспринимается с позиции силы:
+сила духа, сила мысли, сила слова, сила Божественной любви,
+физическая сила и т. д. Их жизнь всегда демонстрирует пики
+колоссальных подъёмов, а потом спадов, так как всё время находиться
+на гребне волны невозможно, а также на пике силы.<br>
+Мир цикличен и потому, если люди 11 кода не научатся пользоваться
+данной им силой, в их жизни может быть достаточно уроков и задач,
+острых углов для того, чтобы они учились управлять своими
+энергиями, эмоциями и мыслями. Сила таких людей может быть
+временами направлена вовне, а временами во внутрь себя. И от того,
+какая это сила, созидать и разрушать они могут не только окружающий
+мир, но и собственный.<br>
+Любые негативные проявления силы им следует менять на силу
+Божественной любви и принятия мира и людей такими, какие они
+есть. Усмирите страсть внутри себя, усмирите дикого зверя
+собственных эмоций, и вам дано будет принести благо многим, так как
+сил у вас достаточно. У этих людей большой энергетический
+потенциал. Они наделены повышенной трудоспособностью,
+выносливостью.<br>
+Люди 11 кода часто являются трудоголиками. Им все время что-то
+нужно делать, они не могут долго находиться в пассивности.
+занимаются силовыми видами спорта, фитнесом. Часто находят свое
+призвание в инструкторстве по фитнесу и спорту.<br>
+В свободное время любят активный отдых, но им следует учиться
+медитировать и расслабляться, чтобы их сила стала более мягкой и
+созидательной.<br>
+Люди 11-го кода судьбы не терпят давления извне, начинают
+обороняться, у них срабатывает рефлекс «сила на силу», поэтому они
+бывают заносчивы, вспыльчивы и дерзки. А в общем, у них весёлый
+нрав, открытая душа, благородные поступки. Они могут взять на себя
+ответственность, повести за собой людей, у них выражена энергия
+лидерства. Эти люди устойчивы к поражениям и обладают
+стремлением побеждать. У них
+сниженный порог болевой чувствительности.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Имеет огромное количество жизненной энергии, не любит сидеть
+без дела и может выполнять несколько работ одновременно</i><br>
+<i>+ Способен управлять ситуацией через решение некоего конфликта
+(позитивного)</i><br>
+<i>+ Способен влиять на большое количество людей и вести за собой
+стадионы. Чем больше будет коллектив, тем больше будет энергии</i><br>
+<i>+ Революционер с крепким внутренним стержнем</i><br>
+<i>+ Индивидуален во всём</i><br>
+<i>+ Создаёт новый эгрегор (организацию) и люди уходят за ним</i><br>
+<i>+ Физически силён и занимается спортом</i><br>
+<i>+ Видит в сексуальности свою силу</i><br>
+<i>+ Разорвал пуповинную связь с мамой</i><br>
+<i>+ Черпает свою силу в природе, особенно рядом с бушующей
+стихией – водопады, океаны, вулканы, проливной дождь.</i><br></p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Воздействуют на людей с помощью давления и агрессии</i><br>
+<i>– Трудоголик, который стремится заставить других людей работать с
+ним наравне и отказывается понимать, что у остальных нет столько
+энергии, как у него</i><br>
+<i>– Склонен к грубости и физической агрессии, не считается с
+мнением других людей</i><br>
+<i>– Склонен к апатии и депрессии</i><br>
+<i>– Присутствие мужского характера в женщинах</i><br>
+<i>– Отсутствие плана, нерешительность</i><br>
+<i>– Лишний вес из-з нерастраченной энергии</i><br>
+<i>– Отрицание своей сексуальности</i><br>
+<i>– Пуповинная связь с мамой</i><br></p>
+<p align="left">Урок: понять куда идут. Вырабатывать любовь и принятие людей.</p><br>
+<p align="left"><b>12 Энергия. Новое видение, служение.</b><br>
+Люди 12 кода судьбы отмечены Божественным законом служения. У
+них определённая задача: принести больше добра, милосердия,
+сострадания в жизнь. Научить людей быть открытыми, любящими,
+быть для них примером бескорыстной отдачи света, помощи и
+поддержки в мир. Люди 12-го кода судьбы имеют альтернативное,
+креативное видение на многие вопросы жизни.<br>
+У них новаторский взгляд на все сущее на Земле, он учит думать и
+воспринимать жизнь по-другому. Им доступны самые разнообразные
+новые идеи и проекты в любых сферах деятельности. Они кладезь
+необычной информации. Как много интересного можно узнать,
+общаясь с человеком 12 кода судьбы! Жизнь как будто приобретает
+другие краски и очертании. У них открыт канал общения с ангелами, и
+они верят в чудеса и волшебство в жизни.<br>
+Такие люди всегда нацелены на взаимопомощь и поддержку, к ним
+многие обращаются за исцелением души и тела, чувствуют их
+отзывчивое сердце. Главное для них – за проблемами других людей
+помнить о себе, проявлять к себе заботу, любовь и внимание.
+Временами баловать себя, дарить подарки, устраивать праздники. Ведь
+жизнь дана нам для удовольствия, радости, счастья, процветания, а не
+для страданий.<br>
+Для них очень важно не впадать в жертвенность по отношению к
+каким – либо людям и обстоятельствам, вовремя уметь выходить из
+зависимости и подвешенного состояния, уметь сказать «нет»
+и постоять за себя, так как их доброе мягкое сердце иногда подвигает
+на поступки в ущерб себе, главное – на благо других.<br>
+Любовь к себе, самодисциплина, духовное развитие помогают
+людям 12 кода пройти все жизненные уроки и стать мудрее. Они очень
+любят учиться и постигать в жизни что-то необычное, интересное и
+особенное. Им важно научиться отпускать старое, не цепляться за
+людей, ситуации и обстоятельства, не зависать в отживших эмоциях,
+смело идти в перемены. И тогда их жизнь приобретет смысл более
+прогрессивный, начнется движение, и человек обязательно постигнет
+свое предназначение по 12 коду, найдёт свой, и только свой,
+уникальный и необычный, нестандартный путь, который принесёт
+пользу многим. Ведь иное видение – это всегда начало перемен.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Добр, милосерден, способен сострадать</i><br>
+<i>+ Видит в служении людям свою миссию</i><br>
+<i>+ Обладает очень отзывчивым сердцем, готов заниматься
+благотворительностью</i><br>
+<i>+ Умеет говорить «нет», если чего-то не хочет делать</i><br>
+<i>+ Имеет креативное и новаторское мышление</i><br>
+<i>+ Любую проблему может решить быстро и эффективно, потому что
+способен увидеть ситуацию с необычного ракурса</i><br>
+<i>+ Наполнен любовью и видит в людях позитив. Способен любить
+безусловно</i><br>
+<i>+ Является переносчиком благой вести, но понимает, что он лишь
+инструмент. Благодарность людей не присваивает себе, а отдаёт её
+Богу</i><br>
+<i>+ Заботится о теле, занимается спортом, ест полезную и здоровую
+пищу</i><br></p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Любит страдать, обидчив и раним</i><br>
+<i>– Склонен к одиночеству и депрессиям</i><br>
+<i>– Имеет сложности с выбором</i><br>
+<i>– Может впадать в панику</i><br>
+<i>– Чрезмерно привязывается к одному человеку и страдает в случае
+расставания</i><br>
+<i>– Имеет негативное мышление и любит жаловаться на жизнь</i><br>
+<i>– Не умеет говорить «нет», работает за «спасибо» или за небольшую
+плату</i><br>
+<i>– Готов жертвовать собой, чтобы все считали хорошим</i><br>
+<i>– Имеет зависимость от благодарности</i><br>
+<i>– Выставляет «счёт» своим детям</i><br></p>
+<p align="left">Урок: учиться не только отдавать, но и принимать. Научиться
+говорить “нет”. Любить себя.</p><br>
+<p align="left"><b>13 Энергия. Трансформация.</b><br>
+Люди 13 кода мистичны и непредсказуемы по своей энергии. Они
+временами непостижимы и для себя самих. Окружающие
+воспринимают их неоднозначно, так как их сила трансформации и
+изменений чувствуется всегда. И не все готовы встретиться с ней.
+Люди 13 кода судьбы способны вокруг себя вызывать, создавать
+перемены и обновления. Где бы они не появлялись, способствуют
+перерождению старых устоев и форм в новые, более прогрессивные.
+Всё отжившее должно покинуть мироздание и трансформироваться в
+эволюционном потоке жизни. Если человек не готов к переменам, а
+они неизбежны и наступают внезапно, то это не всегда проходит для
+него безболезненно, и поэтому люди 13-го кода способны запускать
+необратимые процессы нужной трансформации, назревших перемен.
+Они и сами не могут долго застаиваться в одной и той же ситуации,
+заниматься нудным и монотонным делом. Им необходимы сильные
+порывы чувств и эмоций. Постоянный интерес к жизни. Они очень
+любознательны, креативны, легко выдерживают сложные
+экстремальные ситуации. В экстриме быстро собираются,
+группируются и концентрируются, действуют без промедления и
+паники.<br>
+Философия жизни и смерти – это их внутренняя душевная
+философия и естественное состояние бытия. Они, как никто другой,
+понимают ритмы цикличности на Земле. И если они отсекают старое,
+то уже не возвращаются в него, а начинают новые жизненные циклы.<br>
+Люди 13-го кода обладают решительностью, смелостью и
+бесстрашием. Они дерзкие, очень активные, способные на подвиги и
+на порывы чувств.<br>
+У них в жизни наблюдаются циклы: одни состояния через какое-то
+время сменяются противоположными, как дыхание самой жизни, как
+смена времен года, как жизнь и смерть. Им самим необходимо духовно
+принимать все циклы своей жизни и всё время настраиваться на волну
+позитива, радости и счастья, на счастливую волну.<br>
+Они прирожденные спасатели и экстремалы, у них притуплён страх
+смерти. Они понимают её философию и не боятся, как правило, того,
+что с ней связано. Бесстрашие -это черта их характера. Помогать
+людям меняться, извлекать духовные уроки из трудностей, отпускать
+старое, разрушать зависшие ситуации и демонстрировать людям путь
+перемен – это их миссия на Земле, их предназначение.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Загадочный и непредсказуемый</i><br>
+<i>+ Любит экстрим</i><br>
+<i>+ С ним постоянно происходят трансформации. Каждый день
+наполнен события</i><br>
+<i>+ Рядом с ним люди осознают, что в их жизни не так. Он запускает
+перемены в жизни людей</i><br>
+<i>+ Любознательный и креативный</i><br>
+<i>+ Обладает хорошей памятью</i><br>
+<i>+ Решительный и смелый, в критических ситуациях не паникует,
+может быть прекрасным антикризисным менеджером. Критическая
+ситуация оценивается им как позитивная</i><br>
+<i>+ Не боится старости и смерти</i><br>
+<i>+ Энергетически защищает своих близких</i><br>
+<i>+ Структурирует информацию, чтобы передать её потомкам</i><br></p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Агрессивен и резок</i><br>
+<i>– Навязывает своё мнение и перемены другим людям</i><br>
+<i>– Хладнокровен и равнодушен к боли других людей, отсутствует
+сострадание</i><br>
+<i>– Не способен концентрироваться на одном деле и не доводит
+начатое до конца</i><br>
+<i>– Служит эгрегору</i><br>
+<i>– Боится за жизнь и здоровье своих близких</i><br>
+<i>– Боится старости и смерти</i><br>
+<i>– Не может расстаться со старым. В том числе со старыми. уже
+законченными отношениями</i><br>
+<i>– Находится в отношениях из чувства долга</i><br>
+<i>– Имеет суицидальные наклонности</i><br></p>
+<p align="left">Урок: умение отпускать, умение начинать новые циклы. Постоянно
+развиваться и помнить о ценности жизни.</p><br>
+<p align="left"><b>14 Энергия. Искусство, зрелая душа,
+творчество, умеренность.</b><br>
+Люди 14-го кода – это люди, утонченно чувствующие и
+воспринимающие мир, людей и события в жизни. У них богатый
+эмоциональный и внутренний мир, зрелая душа. Они восприимчивы
+ко всему прекрасному, им необходимо подпитывать себя энергиями
+искусства. поэтому они любят проводить время, посещая музеи,
+театры, концерты, бывать на творческих вечерах. Они увлекаются
+танцами, живописью, музыкой, театром и кино.<br>
+Сфера увлечений 14-го кода очень богатая и разнообразная. Они
+интеллектуальны, легко поддерживают беседу, как правило, начитанны
+и много знают. Поэзия, история -тоже интересны им. Они и сами могут
+выбирать род деятельности, связанный со сферой искусства. Им легко
+даются иностранные языки, и они имеют, как правило, контакты за
+границей или путешествуют по разным странам.<br>
+У людей 14-го кода, помимо способностей в сфере искусства,
+развиты способности к целительству людей, причём чаще всего –
+натуральными средствами. Они знают травы, методы очищения
+организма, любят все это применять к себе, к еде относятся разумно,
+стараются придерживаться здорового образа жизни
+Люди 14 кода учатся усмирять в себе все внутренние страсти через
+очищение, пост, молитву и голодание. Они стараются отойти от
+телесных искушений, тем самым укрепляя дух. В общении с
+окружающими пытаются в первую очередь увидеть душу человека, его
+суть, а уж потом внешние данные. Внутреннее для них важнее
+внешнего, хотя красота форм и эстетика вкуса присущи этим людям.
+Они тонкие ценители всего прекрасного.<br>
+Их целительная стихия – это вода. Таким людям полезно чаще
+контактировать с водой, принимать водные процедуры, им хорошо
+помогает водолечение. У них от рождения связь с Ангелом-
+хранителем, и поэтому развита интуиция и экстрасенсорное
+чувствование. Из них получаются хорошие целители. Характер людей
+14 кода уравновешенный, доброжелательный, в позитиве открытый.
+Они могут занимать позицию лидера, но не особо стремятся к этому.
+Им важнее быть в творческом процессе жизни, чем в руководящем.
+Это люди, любящие природу и животных. Про человека с
+проработанным от негативов 14 кодом судьбы говорят, что у него душа
+ангела.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Тонко чувствующий и эмоциональный человек с глубокой душой</i><br>
+<i>+ Доброжелателен и открыт</i><br>
+<i>+ Любит заниматься творчеством и проводить время в кругу
+единомышленников</i><br>
+<i>+ Через своё творчество стремится к бессмертию</i><br>
+<i>+ Любит поэзию и историю, его восхищает всё прекрасное</i><br>
+<i>+ Интеллектуален и хорошо образован</i><br>
+<i>+ Имеет особую связь с Ангелом и его посещает муза</i><br>
+<i>+ Способен воздействовать на энергетику людей</i><br>
+<i>+ Есть дар целительства с помощью трав, воды и силы природы</i><br>
+<i>+ Любит воду. В сложных ситуациях пребывание у водоёмов
+придаёт ему сил</i><br>
+<i>+ Принимает любую неопределённость в своей жизни как ресурс</i><br></p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Не умеет прощать, груб, имеет чёрствую душу</i><br>
+<i>– Раним, любит поплакать и пострадать</i><br>
+<i>– Не верит в свои силы и Высший замысел</i><br>
+<i>– Не может довольствоваться тем, что имеет. Хочет всё больше и
+больше</i><br>
+<i>– Живёт не по средствам. Необходимо научиться не транжирить,
+когда денег мало и не экономить, когда их достаточно</i><br>
+<i>– Нетерпелив, имеет примитивное мировосприятие</i><br>
+<i>– В целях успокоения или в поисках вдохновения прибегает к
+различным допингам</i><br>
+<i>– Часто совершает лишние, никому не нужные действия</i><br></p>
+<p align="left">Урок: жить в радости. Научиться слушать свою душу, раскрыть
+творческий потенциал. Нужно заниматься чисткой пространства души,
+эмоционального мира: практика прощения, открытие любви,
+энергетические практики, молитвы, медитации. Радости от внешнего
+мира не будет, пока не почистить внутренний мир.</p><br>
+<p align="left"><b>15 Энергия. Проявление, искушение.</b><br>
+Люди 15 кода судьбы одарены большим потенциалом энергии и
+возможностей. Им дано видение человеческих слабостей. Такой
+человек, как рентген, смотрит и видит насквозь, где что несовершенно,
+и где следует проработать и духовно исцелить. И, сам того не ведая, он
+старается спровоцировать человека на обнажение этого негатива.
+Чтобы сам человек увидел, в чём еще его слабости и несовершенства.
+Люди этого кода выполняют миссию проверяющих на готовность
+перехода в семерицу энергии Духа, так как именно с 15-го кода и
+начинается Духовная семерица судьбоносных энергий (с 1 по 7 код –
+семерица Материи, со 2 по 14 – семерица Души, а с 15 по 21 –
+семерица Духа и 22 код – переходный, соединяющий Дух с материей).<br>
+И поэтому у людей 15 кода особенная миссия: не дать слабым и
+неготовым подняться выше, потому что они не смогут на этой высоте
+удержаться, а падать с нее для них больно и опасно. Мы с вами всегда
+должны понимать, из-за чего в себе мы не готовы удержатся на той или
+иной высоте. Поэтому 15 код призван искушать человека и проверять
+на прочность.<br>
+Люди 15 кода судьбы являются теми, кто провоцирует и проверяет,
+кто подталкивает или предлагает искушение. Ими же указывают нам
+на наши слабые места. Заведите дружбу с человеком 15 кода, и вы всё
+узнаете, в чём вы еще слабы и несовершенны. Поэтому не всем под
+силу быть с этими людьми постоянно. К ним относятся люди
+неоднозначно: кто-то любит и уважает, кто-то злится, а кто-то
+сторонится и боится, кто-то интуитивно отгораживается от них,
+опасаясь. что начнёт происходить то, с чем он не готов соприкоснуться
+и встретиться.<br>
+В целом люди 15 кода весёлые, энергичные, компанейские, готовые
+на авантюрные жизненные приключения, умеющие управлять
+ситуациями и другими людьми, умеющими повернуть события в свою
+сторону. Они любят земные удовольствия и умеют в свою жизнь
+притянуть благо. Всё шикарное, богатое, гламурное – для них.
+Люди 15 кода понимают цену материальным и душевным
+ценностям, разбираются во многих жизненных вопросах, умеют дать
+правильный совет, истинно увидеть суть проблемы и ситуации. Эти
+люди от природы обладают даром ясновидения. У них развитая
+интуиция и богатый внутренний мир.<br>
+Стремление к обладанию заложено в природе 15 кода. Им
+необходимо иметь все самое лучшее и шикарное, блистать в обществе.
+Они, как правило, ухожены, прекрасно и стильно одеты. Умеют
+говорить на публику, очаровывать. Талантливы во многих сферах. Им
+отлично удаётся бизнес, сделки с недвижимостью, работа с
+финансами. Умеют притянуть «шальные деньги». В игре им, как
+правило, везёт, только тоже следует вовремя остановиться и выйти из
+игры победителем.<br>
+Люди 15 кода приспосабливаются к любым условиям и в любых
+ситуациях умудряются найти выход из положения. То, что считают
+своим, отдавать не любят, берегут. Нежные, страстные, любящие. И
+надёжные, и авантюрные одновременно.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Имеет большой запас энергии</i><br>
+<i>+ Видит людей насквозь, его сложно обмануть.</i><br>
+<i>+ Хороший психолог. Видит суть проблемы и может дать важный и
+нужный совет</i><br>
+<i>+ Провоцирует других людей с целью проявить их человеческие
+слабости</i><br>
+<i>+ Принимает теневые стороны в себе и в людях</i><br>
+<i>+ Умеет управлять людьми и ситуацией с помощью простых и
+конкретных правил. Легко притягивает то, что хочет</i><br>
+<i>+ Считает власть своей миссией</i><br>
+<i>+ Прекрасный оратор</i><br>
+<i>+ Талантлив сразу в нескольких сферах</i><br>
+<i>+ Весёлый, компанейский, авантюрен, любит приключения</i><br>
+<i>+ Любит удовольствия и роскошь</i><br>
+<i>+ Страстен и сексуален</i><br></p>
+<p align="left"><U>В минусе обладатель аркана:</U></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Агрессивен и нетерпим к человеческим слабостям, любит делать
+колкие замечания</i><br>
+<i>– Жаден и завистлив. Эгоист</i><br>
+<i>– Ревнив. В отношениях с партнёром придирчив, имеет много
+претензий или неразборчив в связях</i><br>
+<i>– Имеет зависимости (алкогольная, наркотическая, от еды)</i><br>
+<i>– Скрывает свою теневую сторону. Замечает недостатки только в
+других людях</i><br>
+<i>– Жаждет власти любой ценой. Может решиться на нечестные
+деньги</i><br>
+<i>– Всегда чувствует себя идеальным. Имеет раздутое Эго</i><br>
+<i>– Может страдать бесплодием из-за стремления получить
+идеального ребёнка. По этой же причине может отказываться от
+отношений. Партнёр или идеальный, или никакой</i><br></p>
+<p align="left">Урок: развиваться духовно, идти к свету, совершенствовать себя
+внутренне. Проработка гордыни.</p><br>
+<p align="left"><b>16 Энергия. Духовное преображение.</b><br>
+После того, как человек встретился со многими земными
+искушениями и душевными переживаниями – он многое понял и
+прозрел, и в этом суть 16 энергии. Суть в прозрении, в изменении
+взгляда на привычный уклад жизни, на все, что ранее казалось
+неизменным. Это инсайт, вспышка света в сознании. Это умение жить
+и радоваться здесь и сейчас. Все претерпевает трансформацию в
+энергиях этого кода судьбы. Новое видение и понимание даёт человеку
+возможность начать новую, измененную жизнь, более осознанную и
+духовную. И это не значит, что тут же изменились обстоятельства.
+Просто изменился взгляд на них. Изменилось к ним отношение.
+Пришло принятие.<br>
+Энергия 16-го кода несёт в себе трансформацию и разрушение всего
+тормозящего и уводящего от предназначения. И люди 16 кода судьбы
+способствуют духовному пробуждению. Разрушить старое видение и
+мировоззрение, вносить изменения в привычные формы и застойный
+уклад жизни, показывать разрушающую силу земных зацепок и
+привязок, эмоциональных зависимостей – это их способность от Бога.
+Они проходят за жизнь свой путь восхождения к Духу, получая от
+судьбы непростые уроки для собственной трансформации и
+пробуждения.<br>
+Им приходится часто начинать новые циклы, ведь жизнь никогда не
+стоит на месте. Всегда что-то происходит, и если человек научился
+понимать происходящее правильно, по всем кармическим законам
+бытия, то он выходит победителем, даже из самых сложных ситуаций,
+приобретая еще большую силу духа и устойчивость.<br>
+Эти люди сильные энергетически и духовно, потому что по-другому
+невозможно справиться с мощными энергиями 16 кода. Им это дано по
+судьбе как данность предназначения. Они бывают «взрывными»
+и резкими, импульсивными, но их доброе сердце, желание помочь,
+показать и объяснить людям выход к свету, делает их светящимися
+огоньками в любой тьме.<br>
+В любой ночи, человек 16 кода судьбы способен вывести других к
+свету, новому видению и пробуждению. Это его лидерская энергия,
+способная вести за собой людей. Такой человек способен видеть путь
+к изменениям и в обычных житейских делах. Любит участвовать в
+реконструкциях и перестройках. От него можно ожидать необычных,
+креативных решений, новаторского подхода к любому делу.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Духовный лидер, обладающий серьёзными духовными знаниями</i><br>
+<i>+ Лидер, который несёт людям новые знания и способствует их
+духовному пробуждению</i><br>
+<i>+ Стремится к самопознанию и саморазвитию</i><br>
+<i>+ Особо эффективен в проведении реконструкций и перестроек, а
+также в строительстве</i><br>
+<i>+ Не имеет зацепок за материю и пробуждается через разрушение
+старого мира. После разрушения старого спокойно меняет сферу
+деятельности</i><br>
+<i>+ Спокойно проходит этап отсутствия любви. При разрушении
+отношений, отпускает партнёра и не пытается всё возродить</i><br>
+<i>+ Любые перемены принимает с благодарностью и не сожалеет о
+разрушенном и потерянном</i><br>
+<i>+ Склонен к разумному аскетизму. Уделяет время медитациям и
+молитвам</i><br></p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Агрессивен, не умеет контролировать свои эмоции</i><br>
+<i>– Обладает узким мышлением и имеет зацепки за материальный мир</i><br>
+<i>– Не желает духовно развиваться сам и сопротивляется духовному
+развитию других людей</i><br>
+<i>– В его жизни отсутствует порядок, а действия хаотичны</i><br>
+<i>– Подвержен травмам. Может и сам истязать своё тело</i><br>
+<i>– Имеет зависимости</i><br>
+<i>– Не умеет чередовать активность и покой</i><br></p>
+<p align="left">Урок: человеку нужно стремиться к осознанной жизни, не бояться
+перемен и духовно работать над собой.</p><br>
+<p align="left"><b>17 Энергия. Звезда, популярность.</b><br>
+Люди 17 кода судьбы – это звездные люди, у них ярко выраженная
+неординарность. Они отмечены небом от рождения. Небо и Высшие
+силы курируют, оберегают, хранят и дают им энергию для проявления
+в жизни. Это может быть любой вид творчества или же яркость в
+принципе, даже в повседневных делах и заботах. Такого человека
+нельзя не заметить, его хочется выделить. С ним интересно общаться,
+к нему притягиваются люди, т.к. они чувствуют его позитивное
+влияние. Небо делает таких людей своими проводниками энергий. У
+них тесная связь с природой. Они отзывчивы и открыты.
+Их руки способны исцелять. И все, чтобы они не делали, если они
+делают с любовью, у них получается хорошо. Про человека, через
+которого течет, как через проводника, Небесная энергия, говорят, что
+он звездный человек. т.е. имеет связь со своей звездой. И если он
+углубится в какое-либо занятие, то сможет подняться в нем до высот
+звезды и быть замеченным многими. Ведь звезда светит на небосводе,
+и на нее могут смотреть тысячи.
+Люди 17 кода – восприимчивые, чувствительные, интуитивные,
+экстрасенсорные. Им часто снятся яркие и пророческие сны. У них
+богатое воображение и фантазия. Иногда про них говорят «спуститесь
+на землю и перестаньте витать в облаках».
+Энергия звезды зачаровывает и завораживает. Главное для них –
+найти свой путь, открыть свой талант, понять свою стезю в жизни и в
+творчестве, тогда энергия Неба сможет проявиться через них
+максимальным потоком. Вера в себя, любовь к себе, связь с небом –
+это важные составляющие успеха таких людей. Состояние радостного,
+восторженного ребенка люди «звезды» могут пронести через всю
+жизнь. Они талантливы в любом виде искусств, которым займутся
+серьезно. Любят животных природу, цветы.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Неординарный, яркий, любит гламур, заметен в любом коллективе</i><br>
+<i>+ Стремится заявить о себе, не боится сцены</i><br>
+<i>+ Обладает ярко выраженными творческими способностями</i><br>
+<i>+ Любит, когда его хвалят. Особенно когда аплодируют</i><br>
+<i>+ Радостный. отзывчивый и открытый</i><br>
+<i>+ Настойчив, в любом деле стремится стать профессионалом</i><br>
+<i>+ Решительно идёт к своей цели</i><br>
+<i>+ Не боится быть не таким, как все</i><br>
+<i>+ Имеет склонность к экстрасенсорике</i><br>
+<i>+ Живут нестандартно, особенно, и своим примером показывают
+людям, что можно жить не так, как все</i><br>
+<i>+ Любит поэзию и красивый слог</i><br>
+<i>+ Сексуален и эротичен</i><br></p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Несамостоятелен, не верит в свои силы</i><br>
+<i>– Подвержен апатии, слабохарактерен и не хочет самовыражаться.
+Боится заявить о себе из-за чувства стыда. Подавляет свои эмоции</i><br>
+<i>– Страдает комплексами, скрывает свой талант, свою красоту,
+пытается слиться с толпой и стать «серой мышкой»</i><br>
+<i>– Или же страдает эгоизмом, гордыней и «звёздной болезнью»</i><br>
+<i>– Верит в панацею и волшебную палочку, хочет получить всё «на
+халяву»</i><br>
+<i>– Играет в лотереи</i><br>
+<i>– Сексуально закомплексован</i><br></p>
+<p align="left">Урок: раскрыть в себе творчество и наладить взаимосвязь с небом,
+стать проводником.</p><br>
+<p align="left"><b>18 Энергия. Магия, Луна, освобождение.</b><br>
+Люди, рожденные под 18 энергией судьбы, мистичны и
+притягательны по своей природе. Они наделены богатым внутренним
+миром, глубина такого человека завораживает, они люди – загадки,
+обладающие богатым воображением и хорошо развитой интуицией.
+Им часто сняться пророческие сны, и у них энергетическая связь с
+Луной. Поэтому на их жизнь и здоровье напрямую влияют Лунные
+циклы. Если Луна прибывает (растущая), то растет и их потенциал;
+если убывающая, то энергии может быть меньше. Но все равно, люди
+18-го кода сильны энергетически. В полнолуние они достигают
+наивысшего своего потенциала.<br>
+Луна – это огромный магнит во Вселенной, и поэтому люди Луны
+так же способны притягивать в свою жизнь то, на чем они
+концентрируются, т.е. о чем какое-то время думают. У них самая
+сильная материализующая. Мыслями люди 18 кода могут создавать
+реальность для себя, и хорошо, если это светлая реальность. А если
+нет? Поэтому таким людям необходимо понимать это и отслеживать
+мысли, на которых они концентрируются долго. Быть в позитиве,
+потому что позитивное мышление – это путь к успеху по жизни.
+Таких людей интересует все загадочное, необычное и мистичное.
+Среди людей луны больше всего мистиков, магов и прорицателей.
+Свои способности они часто превращают в профессиональную
+деятельность или строят на основании своих способностей. Луне
+подвластна магия и ритуальность. Церемониальность.<br>
+В обычной жизни луна наделяет людей артистическими
+способностями, богатым творческим воображением, хорошей памятью
+и чувствованием ситуаций и людей. Луна дает связь с Небесными
+покровителями, и поэтому люди 18 кода верят в Высшие силы и
+чудеса.<br>
+Они могут реализовать себя в любой из сфер жизни, они очень
+разносторонние, но все же склонны к чему-то необычному и тяготеют
+к искусству. Обладают от природы писательским даром. Создают
+вокруг себя красоту.<br>
+Луна – это иньская энергия, притягивающая. Ей покровительствует
+стихия воды. И поэтому людям Луны полезно чаще контактировать с
+водой, бывать у водоемов, устраивать исцеление и очищение
+физического тела водой. Им необходимо следить за водным балансом в
+организме, в течении дня пить очищенную воду.<br>
+Им нельзя надолго впадать в депрессию. Следует развиваться
+духовно, чтобы темная, негативная Луна не смогла их затянуть.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Имеет богатый внутренний мир, загадочен</i><br>
+<i>+ Способен материализовать пространство силой мысли</i><br>
+<i>+ Может вовремя переключить своё внимание с негатива, чтобы
+событие изменилось в лучшую сторону</i><br>
+<i>+ Обладает мистическими способностями и богатым творческим
+потенциалом</i><br>
+<i>+ Ему часто снятся пророческие сны</i><br>
+<i>+ Зависим от лунных циклов и живёт по ним</i><br>
+<i>+ Имеет хорошо развитое образное мышление</i><br>
+<i>+ Имеет позитивное мышление</i><br>
+<i>+ Изучает науки. влияющие на психическую природу человека</i><br></p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Часто находится в подавленном психическом состоянии, склонен к
+депрессиям, нерешителен</i><br>
+<i>– Любит одиночество</i><br>
+<i>– Не понимает своё предназначение, не видит свой потенциал</i><br>
+<i>– Имеет всевозможные страхи и фобии</i><br>
+<i>– Склонен к апатии</i><br>
+<i>– Может стремиться уйти от реальности с помощью всевозможных
+зависимостей</i><br>
+<i>– Интересуется чёрной магией</i><br>
+<i>– Имеет лишний вес</i><br>
+<i>– Не принимает свою сексуальность</i><br></p>
+<p align="left">Урок: развивать свое позитивное воображение, не уходить в негатив.
+Моделировать позитив (магическая позитивная визуализация), как
+техника в помощь.</p><br>
+<p align="left"><b>19 Энергия. Солнце, процветание, изобилие,
+богатство.</b><br>
+Люди 19-го кода судьбы, наделены способностью светить, а значит –
+безусловно, отдавать в мир, людям свои творческие способности и
+энергетический потенциал. Они очень открыты, у них мощная энергия.
+Солнце светит всем, не выбирая никого. Оно просто есть, и восходит
+на небосводе, а сами люди выбирают выходить им к солнцу,
+включаться активно в начавшийся день или нет. И поэтому люди
+Солнца вокруг себя
+притягивают множество людей.<br>
+В их судьбе действуют энергии коллектива. Они быстро
+завоевывают признание и акцентируют на себе внимание. Проявляют
+явно выраженную лидерскую позицию. Солнце не может долго
+находиться в тени. Его заметят все, если оно вышло из-за горизонта,
+или из-за тучи. У таких людей, как правило, глобальные задачи. Они
+ставят их перед собой. И очень активно могут действовать, идя к их
+достижению. Они позитивны, редко впадают в отчаяние и депрессию.
+Состояние печали – это не для них. Они могут огорчаться, когда долго
+находятся без деятельной, созидательной активности.<br>
+Их жизнь – это кипучее творчество во всем. Все должно с
+пробуждением лучей солнца на рассвете включиться в активную
+работу. И поэтому им непонятно, как это другие люди могут ничего не
+делать, не быть активными, ни к чему не стремиться. Их удручает
+такая позиция. Но им следует принять людей, такими, какие они есть,
+не всем дано быть Солнцем. У всех разные энергии по судьбе.
+У Солнца самая активная яньская энергия, энергия действия. И
+поэтому именно на этих людей, как правило, Вселенная возложила
+серьезные, важные, глобальные задачи: задачи по созиданию,
+распространению знаний, света, добра, любви, красоты, исцеления,
+тепла и радости. Как радостно, когда видишь солнышко на небе. Душа
+поет, все вокруг приобретает яркие краски.<br>
+Только людям 19 кода следует понимать свое сильное влияние на
+мир. Если Солнце какое -то время будет светить в одну точку, то место,
+в которое оно будет светить, загорится и сгорит от огромной силы
+энергии огня. И поэтому цепляться за одного человека, за одну
+жизненную ситуацию им крайне вредно, потому что вместо добра и
+любви они могут навредить сами того не понимая. Их энергия должна
+быть рассеяна на
+многих. А значит, им следует, по жизни иметь поле для активной
+деятельности, чтобы весь основной свой потенциал энергии
+вырабатывать там, в своем деле, а дома близким и домашним пусть
+достаются теплые лучи, а не жар активно испепеляющего Солнца. Как
+можно солнце закрыть в четырех стенах! Это невозможно. Если это
+сделать, то сам человек из-за не реализации и не выработки энергии
+начинает плохо себя чувствовать. Происходит некое самосгорание.<br>
+Поэтому таким людям следует следить за тем, чтобы их энергия
+была в общественной деятельности, или в творческом процессе. Их
+следует
+загрузить работой, что бы они чувствовали свою полезность людям.
+Солнцу дано светить! Люди Солнца любят просторы, большие дома и
+квартиры. Им присуща широта во всем.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Имеет большой запас энергии и позитива</i><br>
+<i>+ Открыт и непосредственен, умеет радоваться, как ребёнок.
+Радуется даже самым простым вещам</i><br>
+<i>+ Лидер, окружённый большим количеством людей</i><br>
+<i>+ Целеустремлён, имеет активную жизненную позицию, всегда
+добивается поставленных целей</i><br>
+<i>+ Богат и процветает во всем</i><br>
+<i>+ Понимает, что мир устроен просто и мудр. Осознает, что в мире
+всего и для всех достаточно. Поэтому не испытывает чувство вины</i><br>
+<i>+ Всегда готов предпринять еще одну попытку и добивается успеха
+со второго или третьего раза. Не расстраивается из-за этого</i><br></p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Зациклен на чем-то одном в своей жизни. Это может быть какое-то
+событие или человек. Может просто «залюбить» своего партнёра,
+лишив его самовыражения</i><br>
+<i>– В состоянии злости ограничивает общение с людьми, или даже
+ругается с ними</i><br>
+<i>– Разочарован в своих возможностях, ищет в себе источник неудач
+<i>– Или же, наоборот, прикладывает слишком много усилий для
+достижения своей цели</i><br>
+<i>– Стремится к деньгам всеми силами, но при этом беден</i><br>
+<i>– Постоянно копается в себе и испытывает чувство вины по любому
+поводу</i><br></p></i>
+<p align="left">Урок: управлять своей энергией на благо. Чтобы солнышко было
+теплым, мягким, чтобы согревало.</p><br>
+<p align="left"><b>20 Энергия. Яснознание, связь с родом.</b><br>
+Люди, с 20 энергией судьбы – наделены способностью
+воспринимать информацию из Вселенского информационного поля и
+передавать ее в мир, как проводники энергии. Они от природы
+мистичны и имеют тесную связь с небом, т.е. экстрасенсорны и
+интуитивны. Им снятся пророческие сны, у них бывают вспышки
+прояснения сознания, когда в голову как будто бы приходит необычная
+мысль, которая явно не является мыслью логического мышления. И
+они удивляются: «Откуда я это знаю!»<br>
+Люди 20 кода – прирожденные целители, они чувствуют энергии и
+могут лечить. Они связаны единой кармой со своими предками, т.е.
+единой кармической задачей, а, следовательно, им предстоит за жизнь
+отработать, т.е. исцелить карму своего рода. Это значит: постараться
+жить по-другому, не так, как жили предки и родители. 20 код – это
+труба между Небом и Землей, между миром живых и миром мертвых.
+И поэтому к людям
+20 кода через сны могут приходить умершие родственники и давать
+информацию. Им понятна философия жизни и смерти. Как правило,
+они не боятся смерти и могут работать в сферах, связанных с этим
+процессом.<br>
+Им интересно все необычное и неопознанное. Они часто находят
+себе применение в информационных структурах. Люди энергетически
+сильные, имеющие небесное покровительство от рождения. Они с
+самого рождения чувствуют, что Бог есть. Они любят заниматься
+духовным развитием. Изучают законы мироздания. Способны
+передавать информацию нового времени для людей планеты, если
+разовьют в себе
+способности яснознания. В повседневной жизни люди 20-го кода
+разносторонне развиты, с большим диапазоном интересов и
+увлечений.<br>
+Им очень важно отказаться от агрессии, научиться прощать, не
+осуждать людей, не делить мир на добро и зло, уйти от жестокости,
+излишнего давления и контроля над близкими людьми. Им необходимо
+прийти к позитивному мышлению, так как их мысли материализуются
+очень быстро. Небо слышит их! Ангелы с ними рядом.<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Склонен к экстрасенсорике и ясновидению. Способен
+восстановить энергопотенциал человека</i><br>
+<i>+ Имеет талант целителя</i><br>
+<i>+ Любит всё необычное и непознанное. Имеет разносторонние
+интересы</i><br>
+<i>+ Уже в детстве может видеть энергии тонкого плана. Ему часто
+снятся пророческие сны, в которых он получает подсказки от умерших
+родственников</i><br>
+<i>+ Понимает философию жизни и смерти. Принимает смерть как
+продолжение жизни</i><br>
+<i>+ Имеет доступ к информации обо всех душах. Видит во всех людях
+души.</i><br>
+<i>+ Не злопамятен</i><br></p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Агрессивен и склонен осуждать людей</i><br>
+<i>– Давит на людей и пытается подчинить их своей воле</i><br>
+<i>– Или же наоборот не имеет внутреннего стержня, склонен к
+альтруизму</i><br>
+<i>– Или слишком оторван от материального мира, или, напротив,
+зацеплен за материю и совсем не развивается духовно</i><br>
+<i>– Имеет обиды на родителей или родственников. Постоянно
+предъявляет к ним претензии. Лишается поддержки от родных</i><br>
+<i>– Живет с нерешёнными родовыми программами. Страдает от
+родовых болезней</i><br>
+<i>– Не понимает совей индивидуальности и ценности</i><br>
+<i>– Хитроват и трусоват</i><br>
+<i>– Эгоистичен и равнодушен к проблемам других</i><br>
+<i>– Ленив</i><br></p>
+<p align="left">Урок: прийти к небу, отработать родовую карму.</p><br>
+<p align="left"><b>21 Энергия. Мир, миротворец.</b><br>
+Люди, рожденные в энергиях 21 кода судьбы от природы, наделены
+глубокой связью со всем бытием, со всем, что окружает, со всем
+миром. Они глубоко чувствующие, тонко воспринимающие и
+миролюбивые. Они природные целители душ и дипломаты. Способны
+урегулировать конфликты, нацелены в своих мыслях на глобальные
+задачи. Им интересно все не только в масштабе их личной жизни, но и
+в масштабах страны, всей Земли и Вселенной. Они чувствуют
+присутствие и покровительство Высших сил с самого детства. Верит,
+что возможно все. Редко ограничивают себя в своих планах, надеждах
+и мечтах.<br>
+Им хочется принести благо многим людям. И на самом деле они
+нацелены на это. Самоотверженно и с открытым сердцем они
+вдохновляют светлыми идеями и идеалами. Они могут повести за
+собой множество людей, если всего себя, весь свой светлый потенциал
+они направят на благие цели, дела, задачи. Перед такими людьми по
+факту их 21-го кода судьбы открыты границы мира.<br>
+Как правило, им легко даются иностранные языки, они много
+путешествуют по миру. Выбирают себе род деятельности, связанный с
+мировыми связями. Это либо поездки за границу, либо компании,
+имеющие влияние на весь мир. Вся наша планета для них родной дом:
+они везде чувствуют себя хорошо, где бы ни были, везде легко
+осваиваются, быстро и легко адаптируются к разным климатическим
+условиям. Такие люди экстрасенсорны и могут, энергиями Вселенной
+лечить других людей. Часто к ним приходить информация из
+Вселенского источника.<br>
+Они легко медитируют. Нередко им суждено участвовать в
+глобальных проектах, внося в них сильную составляющую своей
+энергии, силы и воли. Люди 21 энергии двигали мировыми
+процессами, оставив след в истории. Например, Кристиан Диор,
+Александр Македонский, Бах, (21 -й код судьбы). Для людей 21 кода
+важно объединение всех людей планеты. И близок духовный лозунг:
+«Мир во всем мире». Объединение всех людей. Все люди родственные
+души!<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Прирожденный миротворец и дипломат</i><br>
+<i>+ Способен урегулировать и сгладить любой конфликт</i><br>
+<i>+ Имеет связь со всем миром и глобально мыслит</i><br>
+<i>+ У него отсутствует шаблонное мышление, нет границ и
+предубеждений. Он толерантен</i><br>
+<i>+ Не ограничивает себя ничем. Может жить в любой стране мира,
+любит путешествовать, ему легко даются иностранные языки</i><br>
+<i>+ Реализует глобальные проекты, улучшает мир вокруг себя</i><br>
+<i>+ Способен найти энергию в любом месте. Во всех точках Земли
+<i>+ Он человек мира</i><br>
+<i>+ Часто придерживается православной веры. Молится, при чём не
+только за себя и свою семью, но и за всё человечество</i><br>
+<i>+ Склонен к многодетности</i><br></p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Воинственен по отношению к людям, не способен принять других
+людей – другой расы, вероисповедания, других политических взглядов,
+или другой ориентации</i><br>
+<i>– Принципиален и категоричен. Может проявлять агрессию против
+всего мира. Сам становится источником конфликтов</i><br>
+<i>– Хочет получить все и сразу</i><br>
+<i>– Живёт в кредит. Имеет плохую кредитную историю</i><br>
+<i>– Мыслит шаблонно и имеет кучу границ в голове</i><br>
+<i>– Заболевает или он сам, или его близкие, что привязывает его к
+дому</i><br>
+<i>– Часто говорит «не знаю»</i><br></p></i>
+<p align="left">Урок: понять свою миротворческую миссию. Нести добро в мир и не
+бояться расширения.</p><br>
+<p align="left"><b>22 Энергия. Духовная свобода.</b><br>
+Люди, свободные от догм и ограничений, от любых рамок и
+запретов. 22-й код воспринимает мир целостно. Его сердце, воля и
+разум подчинены Вселенской любви и мировым задачам,
+открывающим путь к свободе, полету и мечте.<br>
+22-й код – это путник, преодолевающий дорогу за дорогой с
+котомкой за плечами в свободной льняной одежде. Это образ бродяги,
+перед которым открыты все границы мира. Это путешественники,
+просвещенные учителя, артисты, скоморохи, шуты.<br>
+Артистам 22-го кода судьбы созвучны легкие, комедийные роли. Для
+таких людей свобода является основополагающим внутренним
+принципом. Их бесполезно ставить в рамки и пытаться ограничивать,
+они все бросят и все равно пойдут своей дорогой. Жизнь такими
+людьми воспринимается, как приключение, как дорога, как путь. Путь
+легкий и свободный, по которому нужно пройти весело, смеясь
+трудностям и горестям в глаза.<br>
+Это люди с открытым сердцем и душой. Они способны нести свет
+свободы от ограничений, как вестники света. Вся их жизнь – это
+фейерверк событий и множество контактов и друзей. Они легко
+сходятся с людьми. Любят природу и спокойно воспринимают отдых в
+палатке, ночь у костра под звездами, где все небо и вся Вселенная
+рядом с ними. И им покровительствуют, и их оберегают. Им ясна
+цикличность жизни и смена одного этапа и начало следующего. Как
+правило, они не цепляются за земные блага и дела духовные для них
+выше обычной мирской суеты. Все религии для них едины, все люди
+едины, вся Земля – это родной дом.<br>
+Они творческие натуры, восприимчивые и интуитивные. Им сложно
+долго усидеть на одном месте, их манит пыль земных дорог и
+небесные выси. Радоваться каждому мгновенью жизни – вот образ
+человека 22-го кода судьбы. Вести людей к истинной свободе, к
+вершинам духа – вот их истинные желания и стремления. Жизнь в
+легкости, путь в легкости, миг в легкости – это все 22-й код.
+Авантюрные, рандомно шагающие в неизвестное, легко
+начинающие новые циклы, дела, открывающие новые пути-дороги,
+смелые весельчаки. Безусловно доверяющие Творцу-создателю,
+чувствующие его созвучие с собой, его покровительство в каждое
+мгновение жизни – это 22 код судьбы, и это придает ему небывалую
+силу духа!<br>
+<u>В плюсе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>+ Обладает внутренней свободой</i><br>
+<i>+ Лишен материальных привязанностей. Не любит ограничения и
+запреты</i><br>
+<i>+ Любит путешествовать, причём отдых выберет скорее в горах и с
+палаткой. Его манят приключения и дорога</i><br>
+<i>+ Живёт с открытым сердцем. Легко сходится с людьми, имеет
+много друзей и является центром любой компании</i><br>
+<i>+ Творческий, весёлый, с ним всегда интересно поговорить</i><br>
+<i>+ Любую информацию излагает иначе</i><br>
+<i>+ Трудности его забавляют и придают сил</i><br>
+<i>+ Не поддаётся влиянию, «не от мира сего»</i><br></p>
+<p align="left"><u>В минусе обладатель аркана:</u></p>
+<p style="text-align: left; margin-left: 20%;">
+<i>– Зависим от собственных слабостей и обстоятельств. Вплоть до
+ограничения свободы (тюрьма, больница)</i><br>
+<i>– Сам создаёт себе рамки и становится их жертвой. Работает «от
+звонка до звонка», занимается делами, которые не приносят ему
+никакого удовлетворения и радости</i><br>
+<i>– Ведёт безответственную и разгульную жизнь</i><br>
+<i>– Постоянно произносит слово «нельзя»</i><br>
+<i>– Попадает в материальную тюрьму, не может освободиться от
+материальных зацепок</i><br>
+<i>– Ограничивает свободу других людей</i><br>
+<i>– Часто насмехается над людьми и любит черный юмор</i><br></p>
+<p align="left">Урок: прийти к свободе, развиваться духовно. Гармонично
+развиваться, но уважая потребности других людей. Доверие Богу.</p><br>
+<p align="left">Это было краткое введение в основы матрицы судьбы. Теперь примерно понимая, как это работает и что это, предлагаю расшифровать матрицу судьбы. Вернитесь на главную страницу сайта и воспользуйтесь пунктами "Предназначение", "Детско-родительный канал", "Задача отношений", "Ошибки во взаимоотношениях с родителями и/или своими детьми", "Родовые программы", "Кармический хвост", "Канал отношений", "Финансовый канал", "Отношения", "Здоровье", "Руководство по жизни" и "Подсказки на года".</p>
+
+
+</p>                </div>
+</body>
+</html>
