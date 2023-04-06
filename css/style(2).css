@@ -1,0 +1,33 @@
+.table-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.table-container li {
+  box-sizing: border-box;
+  border: 1px solid black;
+  text-align: left;
+  background-color: #f5f5f5;
+  word-wrap: break-word;
+  flex-direction: column; /* добавляем это свойство, чтобы каждая ячейка начиналась с новой строки */
+}
+
+.table-container .label {
+  display: block;
+  text-align: center;
+}
+li {
+  display: block;
+  background-color: #eee;
+  padding: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
